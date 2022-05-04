@@ -1,0 +1,146 @@
+.logo {
+  width: 50px;
+  height: 50px;
+  border: 2px solid cornflowerblue;
+  border-radius: 50%;
+}
+
+.button {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.1;
+  padding: 15px 3whitespace: normal;
+  border-radius: 2px;
+  color: #fff;
+  background: #ec008c;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: box-shadow .3s ease-in-out;
+  margin: 0 0 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  padding: 18px 34px;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.container-overlay {
+  background-color: white;
+  position: relative;
+  top: 100px;
+
+}
+
+.container-overlay::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  content: "";
+  transform: skewY(-4deg);
+  transform-origin: bottom left;
+  background: var(--black);
+}
+
+.container-overlay::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  content: "";
+  transform: skewY(8deg);
+  transform-origin: bottom right;
+  background: var(--black);
+}
+
+.head-section {
+  background: white;
+}
+
+.tabs-content-item {
+  display: none;
+}
+
+.tabs-content-item.active {
+  display: block;
+}
+
+.container-overlay {
+  background-color: var(--black);
+}
+
+.course-main-title {
+  color: var(--black);
+  text-align: right;
+  padding: 0px 30%;
+  height: 0;
+  position: relative;
+  top: -37px;
+  z-index: 12;
+}
+
+.course-main-title:after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  display: block;
+  background-image: url('../img/design/zap-08.fc201d70f76b.svg');
+}
+.main-content {
+  display: flex;
+}
+
+.course-info-block {
+  color: white;
+}
+
+.forseable-course {
+  color: white;
+
+}
+
+.course-time-table {
+  color: white;
+}
+
+.main-content {
+  gap: 20px;
+}
+
+.pin-wrapper {
+  width: var(--aside-width);
+}
+
+.course-info-wrapper {
+  width: calc(100% - var(--aside-width));
+  margin-top: -50px;
+}
+
+.eye-overlay {
+  position: relative;
+  z-index: 4;
+}
+
+.body-eye {
+  position: absolute;
+  right: 30%;
+  top: -50px;
+}
+
+.eye {
+  width: 50px;
+  height: 50px;
+}
