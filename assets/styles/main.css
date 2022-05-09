@@ -1,8 +1,5 @@
-.logo {
-  width: 50px;
-  height: 50px;
-  border: 2px solid cornflowerblue;
-  border-radius: 50%;
+#app {
+  margin-top: 166px;
 }
 
 .button {
@@ -10,7 +7,8 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 1.1;
-  padding: 15px 3whitespace: normal;
+  padding: 15px 30px;
+
   border-radius: 2px;
   color: #fff;
   background: #ec008c;
@@ -34,10 +32,10 @@
 }
 
 .container-overlay {
-  background-color: white;
+  background-color: var(--deepblack);
   position: relative;
   top: 100px;
-
+  padding-bottom: 100px;
 }
 
 .container-overlay::after {
@@ -50,7 +48,7 @@
   content: "";
   transform: skewY(-4deg);
   transform-origin: bottom left;
-  background: var(--black);
+  background: var(--deepblack);
 }
 
 .container-overlay::before {
@@ -63,11 +61,13 @@
   content: "";
   transform: skewY(8deg);
   transform-origin: bottom right;
-  background: var(--black);
+  background: var(--deepblack);
 }
 
 .head-section {
   background: white;
+  height: 19px;
+  margin-top: -23px;
 }
 
 .tabs-content-item {
@@ -78,39 +78,40 @@
   display: block;
 }
 
-.container-overlay {
-  background-color: var(--black);
-}
-
 .course-main-title {
-  color: var(--black);
-  text-align: right;
-  padding: 0px 30%;
-  height: 0;
+  /* color: var(--black); */
+  text-align: center;
+  padding: 0px 35%;
+  /* height: 0; */
   position: relative;
-  top: -37px;
-  z-index: 12;
+  /* top: -17px; */
+  /* z-index: 12; */
+}
+.course-main-title-text {
+  font-size: 36px;
+  font-weight: bold;
+  margin-left: -100px;
 }
 
-.course-main-title:after {
-  position: absolute;
-  content: '';
-  bottom: 0;
-  display: block;
-  background-image: url('../img/design/zap-08.fc201d70f76b.svg');
+.forseable-course {
+  margin-bottom: 30px;
+  margin-right: 50px;
 }
+
+.forseable-course span {
+  font-size: 26px;
+  color: white;
+}
+
 .main-content {
   display: flex;
 }
 
 .course-info-block {
   color: white;
+  display: flex;
 }
 
-.forseable-course {
-  color: white;
-
-}
 
 .course-time-table {
   color: white;
@@ -143,4 +144,21 @@
 .eye {
   width: 50px;
   height: 50px;
+}
+
+.post {
+  background: var(--black);
+  border: 14px solid transparent;
+  border-image: url(./../img/design/zap-08.fc201d70f76b.svg) 30 stretch;
+  border-image-outset: 7px;
+}
+
+.courseSideBar {
+  position: sticky;
+  top: 200px;
+}
+
+.tabs-nav-item {
+  margin-bottom: 10px;
+  padding: 5px 10px;
 }

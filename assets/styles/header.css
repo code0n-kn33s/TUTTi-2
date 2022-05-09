@@ -1,13 +1,28 @@
+
 header {
     display: flex;
     justify-content: space-between;
-    position: relative;
+    /* position: relative; */
     margin: 0;
     padding: 32px 80px 64px;
     overflow: hidden;
     color: var(--white);
     background: transparent;
     z-index: 5;
+    height: 155px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+
+.header-background {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 header::after {
@@ -20,7 +35,7 @@ header::after {
     content: "";
     transform: skewY(-4deg);
     transform-origin: bottom left;
-    background: var(--black);
+    background: var(--deepblack);
 }
 
 header::before {
@@ -33,5 +48,18 @@ header::before {
     content: "";
     transform: skewY(8deg);
     transform-origin: bottom right;
-    background: var(--black);
+    background: var(--deepblack);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    /* border: 2px solid cornflowerblue; */
+    border-radius: 50%;
+    z-index: 7;
+}
+
+#nav-list {
+    z-index: 8;
+    padding: 0 140px;
 }

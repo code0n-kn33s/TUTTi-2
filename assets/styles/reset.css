@@ -1,5 +1,6 @@
 :root {
     --black: #212529;
+    --deepblack: #181818;
     --yellow: #ffb115;
 
     --white:#f8f8f8;
@@ -27,7 +28,7 @@ html {
 }
 html,
 body {
-    font-family: sans-serif, 'calc';
+    font-family: 'Montserrat', sans-serif, 'calc';
     padding-bottom: 50px;
     /* color: #212529; */
     -webkit-font-smoothing: antialiased;
@@ -123,20 +124,11 @@ h5 {
 
 fieldset {
     background: var(--black);
+    /* border-color: var(--black); */
     position: relative;
     margin-bottom: 20px;
     padding: 0 20px;
-}
-
-fieldset:before {
-    background: linear-gradient(to bottom, #26c1e1 0, #26c1e1 33%, #86ce21 33%, #86ce21 33%, #86ce21 68%, #ffc200 68%, #ffc200 100%);
-    width: 5px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 10px 0 0 10px;
-    z-index: 1;
+    border: none;
 }
 
 legend {
@@ -149,7 +141,7 @@ blockquote {
     position: relative;
     padding: 10px;
 
-    border-left: .3rem solid #e74c3c;
+    /* border-left: .3rem solid #e74c3c; */
     letter-spacing: 1.2px;
     font-weight: 400;
     line-height: 1.5;

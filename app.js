@@ -14,7 +14,7 @@
 
     const navList = document.getElementById('nav-list')
     const app = document.getElementById('app')
-    const currentMain = document.getElementById('nav-objects')
+    const currentMain = document.getElementById('nav-async')
     const titlePage = document.head.getElementsByTagName('title')[0]
     let currentLink = ''
 
@@ -33,5 +33,6 @@
         }
     }
 
+    // current page
     document.addEventListener('DOMContentLoaded', () => currentMain.click())
 })()

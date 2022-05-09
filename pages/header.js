@@ -6,5 +6,6 @@ const headerConstructor = (connectNavs) => {
                 ${headerItem(connectNavs)}
             </ul>
             <div class="logo"></div>
+            <img src="./assets/img/design/bg-hero.png" class="header-background" />
         </header>`
 }

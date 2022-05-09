@@ -4,7 +4,9 @@ const bodyItems = obj => {
                 <div class="tabs-content-item ${i === 0 && 'active'}"
                 id="${item.key}">
                     <div class="head-section">
-                        <h1 class="course-main-title">${obj.titlePage}</h1>
+                        <div class="course-main-title">
+                            <span class="course-main-title-text text-gradient">${obj.titlePage}</span>
+                        </div>
                         <div class="eye-overlay">${eye()}</div>
                     </div>
                     <div class="container-overlay">

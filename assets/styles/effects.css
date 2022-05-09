@@ -6,14 +6,29 @@
 
 .button-gradient {
     background-image: linear-gradient(to right,#f05a28,#ec008c,#f05a28);
-
-
     background-size: 300% 100%;
     transition: all .6s ease-in-out;
 }
+
 .button-gradient:hover {
     box-shadow: 0 10px 30px rgb(0 0 0 / 40%);
     background: linear-gradient(145deg,#f05a28 0,#ec008c 100%);
     color: var(--white);
+}
 
+.left-bordered {
+    position: relative;
+}
+
+.left-bordered:before {
+    content: '';
+    display: block;
+    background: linear-gradient(to bottom, #26c1e1 0, #26c1e1 33%, #86ce21 33%, #86ce21 33%, #86ce21 68%, #ffc200 68%, #ffc200 100%);
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px 0 0 10px;
+    z-index: 1;
 }
