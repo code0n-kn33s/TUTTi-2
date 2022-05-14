@@ -1,8 +1,3 @@
-const connectNavs = [
-  { key: 'async', name: 'Асинхронная логика' },
-  { key: 'objects', name: 'Обьекты' },
-]
-
 function openmark(evt, mark) {
   window.scrollTo(0, 0);
 

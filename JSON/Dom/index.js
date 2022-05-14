@@ -1,7 +1,7 @@
-const index = {
-    id: 'work-with-dom',
+const dom = {
+    id: 'dom',
     titlePage: "Работа с DOM",
     data: [
-        workWithDom,
+        {key: 'stylesheets', object: 'Stylesheets', subject: '', themes: styleSheets}
     ]
 }

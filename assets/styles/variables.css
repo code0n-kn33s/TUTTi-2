@@ -1,0 +1,13 @@
+:root {
+    --black: #212529;
+    --deepblack: #181818;
+    --yellow: #ffb115;
+
+    --white:#f8f8f8;
+    --blue:#118AB2;
+    --green:#06D6A0;
+    --midnight:#073B4C;
+
+    --aside-width: 200px;
+    --header-height: 55px;
+}

@@ -1,7 +1,4 @@
 const body = obj => {
-    return (`
-          <div class="content">
-            ${bodyItems(obj)}
-          </div>
-      `)
+    console.log('>> obj', obj);
+    return (` <div class="content"> ${bodyItems(obj)} </div> `)
   }

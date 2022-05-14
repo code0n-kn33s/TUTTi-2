@@ -1,8 +1,4 @@
-const promises =  {
-    key: 'promises',
-    object: 'promises',
-    subject: 'tasts queue',
-    themes: [
+const promises =  [
         {
             type: 'text',
             title: 'Асинхронные функции',
@@ -31,4 +27,3 @@ const promises =  {
             text: '',
         },
     ]
-}

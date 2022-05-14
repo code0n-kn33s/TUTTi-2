@@ -1,27 +1,23 @@
 const bodyItems = obj => {
     let arrayTheory = obj.data.map((item, i) => {
         return (`
-                <div class="tabs-content-item ${i === 0 && 'active'}"
-                id="${item.key}">
+                <div class="tabs-content-item ${i === 0 && 'active'}" id="${item.key}">
                     <div class="head-section">
-                        <div class="course-main-title">
-                            <span class="course-main-title-text text-gradient">${obj.titlePage}</span>
+
+                        <div class="course-info-block">
+                            <div class="course-time-table">
+                                <div class="courseSideBar"> ${asideItem(obj.data)} </div>
+                            </div>
+                            <div class="forseable-course">
+                                <span class="course-main-title-text text-gradient">${obj.titlePage}</span>
+                                <span> ${item.object} </span>
+                            </div>
                         </div>
-                        <div class="eye-overlay">${eye()}</div>
                     </div>
                     <div class="container-overlay">
                         <div class="container">
-                            <div class="main-content" class="clearfix">
-
-                                <div class="course-info-wrapper">
-                                    ${content(item)}
-                                </div>
-
-                                <div class="pin-wrapper">
-                                    <div class="courseSideBar">
-                                        ${asideItem(obj.data)}
-                                    </div>
-                                </div>
+                            <div class="main-content">
+                                <div class="course-info-wrapper"> ${content(item, obj)} </div>
                             </div>
                         </div>
                     </div>
