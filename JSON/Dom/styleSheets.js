@@ -1,4 +1,15 @@
-let foo = `
+const styleSheets = [
+    // {
+    //     title: '',
+    //     subtitle: '',
+    //     text: '',
+    //     code: '',
+    // },
+    {
+        title: '',
+        subtitle: '',
+        text: '',
+        code: `
 header::after {
     position: absolute;
     top: 0;
@@ -24,17 +35,8 @@ header::before {
     transform-origin: bottom right;
     background: var(--deepblack);
 }
-`
-
-
-
-const styleSheets = [
-    // {
-    //     title: '',
-    //     subtitle: '',
-    //     text: '',
-    //     code: '',
-    // },
+        `,
+    },
     {
         title: 'baskground-img в качестве рамки border',
         subtitle: '',
