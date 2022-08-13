@@ -8,6 +8,9 @@
     --green:#06D6A0;
     --midnight:#073B4C;
 
+    --backgound-blue-to-red: linear-gradient(94.23deg, #5374fa 12.41%, #fd9179 52.55%, #ff6969 89.95%);
     --aside-width: 200px;
     --header-height: 55px;
+
+    --coral: #fe6b6a;
 }

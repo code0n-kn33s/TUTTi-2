@@ -1,11 +1,11 @@
 .text-gradient {
-    background: linear-gradient(94.23deg,#5374fa 12.41%,#fd9179 52.55%,#ff6969 89.95%);
+    background: linear-gradient(94.23deg, #5374fa 12.41%, #fd9179 52.55%, #ff6969 89.95%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .button-gradient {
-    background-image: linear-gradient(to right,#f05a28,#ec008c,#f05a28);
+    background-image: linear-gradient(to right, #f05a28, #ec008c, #f05a28);
     background-size: 300% 100%;
     transition: all .2s ease-in-out;
     cursor: pointer;
@@ -13,7 +13,7 @@
 
 .button-gradient:hover {
     box-shadow: 0 10px 30px rgb(0 0 0 / 40%);
-    background: linear-gradient(145deg,#f05a28 0,#ec008c 100%);
+    background: linear-gradient(145deg, #f05a28 0, #ec008c 100%);
     color: var(--white);
 }
 
@@ -32,4 +32,16 @@
     left: 0;
     border-radius: 10px 0 0 10px;
     z-index: 1;
+}
+
+.yellow-title {
+    background: #f7a614;
+    display: inline-block;
+    padding: 3px 15px;
+    margin-bottom: 10px;
+    border-radius: 42px;
+    color: black;
+    font-size: 12px;
+    font-weight: 700;
+    align-self: start;
 }

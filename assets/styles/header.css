@@ -1,0 +1,89 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  height: var(--header-height);
+  margin: 0;
+  overflow: hidden;
+  color: var(--white);
+  background-color: var(--deepblack);
+  z-index: 5;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-image: url('../img/design/bg-hero.png');
+  background-size: 600px;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  user-select: none;
+}
+
+#nav-list {
+  display: flex;
+  gap: 10px;
+}
+
+.upd_button {
+  font-size: 28px;
+  height: fit-content;
+  transition: .2s;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.upd_button span:first-of-type {
+  display: inline-block;
+  transform: rotate(180deg);
+  margin-right: -5px;
+}
+
+.upd_button:hover {
+  animation: updateAnimation .2s ease-in-out;
+}
+
+@keyframes updateAnimation {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+/* hover effect to text under-line */
+.text-underline {
+  position: relative;
+  padding: 8px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.text-underline::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #ddd;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.text-underline:hover::after, .text-underline.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* end hover effect to text under-line */
+
+
+.logo {
+  width: 50px;
+  height: 50px;
+  /* border: 2px solid cornflowerblue; */
+  border-radius: 50%;
+  z-index: 7;
+}
+
+#nav-list {
+  z-index: 8;
+  padding: 10px 40px;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+    crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="./../../css/style.css"> -->
+  <link rel="stylesheet" href="./../../assets/libs/highlight/styles/a11y-dark.min.css">
+  <link rel="stylesheet" href="../../assets/styles/header.css">
+  <link rel="stylesheet" href="../../assets/styles/variables.css">
+  <link rel="stylesheet" href="./coffe.css">
+  <script src="./../../assets/libs/highlight/highlight.min.js"></script>
+  <script src="./coffe_code.js"></script>
+</head>
+
+<body>
+  <header>
+    <a href="./../../index.html">pens</a>
+    <p>Programs: <a href="./programs/cofeMachine/coffeM_index.html">COFFE</a></p>
+    <p><a href="./../../theory.html">Theory</a></p>
+    <div class="logo"></div>
+    <div class="upd_button" >
+       <span>&#10552;</span>
+       <span>&#10552;</span>
+    </div>
+</header>
+
+  <a href="../../index.html">BACK</a>
+  <div class="header">
+    <div id="menu"></div>
+  </div>
+  <!-- here -->
+  <div class="coffe-wrap cfx">
+    <div class="coffe">
+      <div class="coffe-mech">
+        <div class="socket">
+          <button class="socket-power">
+            <div class="socket-indikator"></div>
+            <div class="socket-in">
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+          <div class="socket-cable"></div>
+        </div>
+        <div class="coffe-machine">
+          <div class="shlang"></div>
+          <div class="water">
+            <div class="water-top">
+              <div class="water-mount">
+                <img src="./assets/water.jpeg" alt="">
+              </div>
+              <ul class="machine-fill">
+                <li class="machine-fill-item power-indicator">
+                  <img src="./assets/lamp.png" alt="">
+                  <span>Power</span>
+                </li>
+                <li class="machine-fill-item water-indicator">
+                  <img src="./assets/lamp.png" alt="">
+                  <span>Water</span>
+                </li>
+                <li class="machine-fill-item coffe-indicator">
+                  <img src="./assets/lamp.png" alt="">
+                  <span>Coffe</span>
+                </li>
+              </ul>
+              <div class="machine-water-count">----</div>
+            </div>
+            <div class="water-bottom">
+              <div class="power-button"></div>
+              <div class="power-display disc"></div>
+            </div>
+          </div>
+          <div class="beans">
+            <div class="mounty-beans-wrap">
+              <div class="machine-coffe-count">----</div>
+              <div class="mount-beans">
+                <img src="./assets/coffe.jpeg" alt="">
+              </div>
+            </div>
+            <div class="mount-coffe">
+              <div class="mount-coffe-img">
+                <div class="mount-coffe-img-wrap">
+                  <img src="./assets/5.jpg" alt="">
+                  <img src="./assets/5.jpg" alt="">
+                </div>
+              </div>
+              <div class="pot-handler"></div>
+              <div class="pot-cap"></div>
+              <div class="pot-neck">&lt;</div>
+              <div class="pot-coffe-mount"></div>
+              <div class="pot-stand"></div>
+              <ul class="pot-amount">
+                <li>&nbsp; 300 mg</li>
+                <li>&nbsp; 200 mg</li>
+                <li>&nbsp; 100 mg</li>
+              </ul>
+            </div>
+            <div class="warming">
+              <div class="coffe-cap-size-switcher sm"></div>
+              <form action="coffe-cap-size" class="coffe-cap-size-list">
+                <div class="cap-size-item">
+                  <input class="cap-size" name="cap-size" data-cup="expresso" type="radio" disabled="true" checked>
+                  <label for="sm">esspresso</label>
+                </div>
+                <div class="cap-size-item">
+                  <input class="cap-size" name="cap-size" data-cup="americano" type="radio" disabled="true">
+                  <label for="md">americano</label>
+                </div>
+                <div class="cap-size-item">
+                  <input class="cap-size" name="cap-size" data-cup="latte" type="radio" disabled="true">
+                  <label for="lg">latte</label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="coffe-cup-wrap">
+          <img src="./assets/dim2.png" alt="">
+          <div class="coffe-cup">good day <span></span></div>
+        </div>
+        <div class="coffe-instruction">
+          <h2>Инструкция:</h2>
+          <ul>
+            <li>Включите в розетку</li>
+            <li>Залейте воды</li>
+            <li>Насыпте коффе</li>
+            <li>Выберите напиток</li>
+            <li>Нажмите пуск</li>
+            <li>Налейте кофе в чашку</li>
+            <li>Не забудьте его выпить <br>(после процесс можно повторить)</li>
+            <li>Если закончится вода или кофе - <br>просто долейте или досыпте</li>
+          </ul>
+        </div>
+      </div>
+      <div class="coffe-table">
+        <div class="coffe-table-top"></div>
+        <div class="coffe-table-foot-left"></div>
+        <div class="coffe-table-foot-right"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="./coffe.js"></script>
+</body>
+
+</html>

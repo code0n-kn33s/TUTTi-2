@@ -21,6 +21,7 @@ body {
     height: 100%;
     width: 100%;
     font-size: 12px;
+    background: var(--deepblack)
 
 }
 
@@ -38,10 +39,10 @@ ol li {
 }
 
 pre {
-    margin: 0px 0 10px 0px;
+    /* margin: 0px 0 10px 0px;
     padding: 0 0 5px 25px;
     white-space: pre-line;
-    word-wrap: break-word;
+    word-wrap: break-word; */
 }
 
 pre.code {
@@ -132,12 +133,7 @@ label {
 
 button {
     display: block;
-    margin: 10px 0;
-    font-size: 18px;
-    border-radius: 3px;
-    padding: 0.25em 1em;
     background: transparent;
-    color: white;
     background: none;
     position: relative;
     border: none;

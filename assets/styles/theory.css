@@ -1,0 +1,201 @@
+:root {
+  --currentColor: white;
+}
+
+html, body {
+  width: 100vw;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header > p {
+  padding: 15px;
+}
+
+.theory-container {
+  width: 100vw;
+  margin: auto;
+  margin-top: 40px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Hind', sans-serif;
+  color: #eee;
+  display: flex;
+}
+
+.accordion-container {
+  padding-left: 40px;
+}
+
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion .accordion-item button[aria-expanded='true'] {
+  border-bottom: 1px solid #03b5d2;
+}
+
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #7288a2;
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: #03b5d2;
+  /* :after {
+    cursor: pointer;
+    color: #03b5d2;
+    border: 1px solid #03b5d2;
+  } */
+}
+
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+
+.accordion button .icon:before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: var(--currentColor);
+}
+
+.accordion button .icon:after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: var(--currentColor);
+}
+
+.accordion button[aria-expanded='true'] {
+  color: #03b5d2;
+}
+
+.accordion button[aria-expanded='true'] .icon:after {
+  width: 0;
+}
+
+.accordion button[aria-expanded='true']+.accordion-content {
+  opacity: 1;
+  max-height: initial;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+
+.accordion .accordion-content p {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 2em 0;
+}
+
+.theory-content {
+  display: flex;
+  padding-left: 40px;
+}
+
+.aside {}
+
+.aside-list {
+
+}
+
+.aside-item {
+  padding: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.aside-item:hover {
+  color: #e3e3e3;
+}
+
+.content-anchor {
+  display: none;
+}
+
+.content-anchor.active {
+  display: block;
+}
+
+.aside-wrap {
+  width: 160px;
+  padding-left: 30px;
+}
+.content-wrap {
+  width: calc(100% - 250px);
+}
+
+.content-anchor .theory-container {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.nav-links li a{
+  font-size: 12px;
+}
+
+.aside-wrap h1 {
+  margin-bottom: 5px;
+}
+/* !theory-article это блочок теории. все стили наследуются oт pens*/
+.theory-article {
+  margin-bottom: 20px;
+}
+.theory-article .field-method{
+  margin-bottom: 16px;
+}
+
