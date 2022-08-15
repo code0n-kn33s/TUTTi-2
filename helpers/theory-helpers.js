@@ -1,33 +1,23 @@
 // aside
-function switchAside() {
-  document.querySelector('.aside-list').onclick = (item) => {
-    const anchor = item.target.getAttribute('data-anchor');
+function switchAside(anchor) {
+  const clicked = $(`#aside-${anchor}`)
+  const findedBlock = $(`#${anchor}`)
 
-    document.querySelectorAll('.content-anchor').forEach(item => item.classList.remove('active'))
+  $l('.content-anchor').forEach(item => item.classList.remove('active'))
+  $l(`.aside-item`).forEach(item => item.classList.remove('active'));
 
-    document.querySelector(`#${anchor}`).classList.toggle('active');
-  }
+  findedBlock.classList.toggle('active');
+
+  clicked.classList.add('active');
+
+  window.localStorage.setItem('currentTheory', anchor)
 }
 
 // accordion
-// function toggleAccordion(elem) {
-//   const elems = document.querySelectorAll('.accordion-button')
-
-//   elems.forEach(item => item.onclick = () =>{})
-// }
 function toggleAccordion(val) {
-  console.log('val', $(`#button-${val}`))
+  const clickedItemAccordion = $(`#button-${val}`)
 
+  const valueAccordionItem = clickedItemAccordion.getAttribute('aria-expanded');
 
-
-  // const itemToggle = this.getAttribute('aria-expanded');
-  // for (i = 0; i < elems.length; i++) {
-  //   elems[i].setAttribute('aria-expanded', 'false');
-  // }
-
-  // if (itemToggle == 'false') {
-  //   console.log('on', this.getAttribute('aria-expanded'))
-  //   this.setAttribute('aria-expanded', 'true');
-  // }
-
+  (valueAccordionItem == 'false') ? clickedItemAccordion.setAttribute('aria-expanded', true) : clickedItemAccordion.setAttribute('aria-expanded', false)
 }

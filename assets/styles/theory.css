@@ -145,9 +145,17 @@ body {
 
 .aside-item {
   padding: 6px;
+  padding-right: 8px;
   color: #fff;
   cursor: pointer;
   font-size: 14px;
+  width: fit-content;
+  user-select: none;
+}
+
+.aside-item.active{
+  transition: 0.2s ease;
+  border-bottom: 1px dotted white;
 }
 
 .aside-item:hover {

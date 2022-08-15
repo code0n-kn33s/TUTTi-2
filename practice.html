@@ -694,20 +694,13 @@
       setState = () => !this.state
 
       hit = () => this.hp -= this.str
-
-      displayHp = () => {
-        if (this.actor === 'monster') $('.monster-hp').innerText = this.hp
-        if (this.actor === 'hero') $('.hero-hp').innerText = this.hp
-      }
     }
 
 
     class Hero extends Actor {
-      constructor() {
-        super()
-      }
-
       activateHero = () => {
+        $('.hero-hp').innerText = this.hp
+
         $('.hit-button').addEventListener('click', (e) => {
 
           $('.hero').classList.toggle('hit')
@@ -728,16 +721,12 @@
     }
 
     class Monster extends Actor {
-      constructor() {
-        super()
-      }
-
       activateMonster = () => {
+        $('.monster-hp').innerText = this.hp
+        console.log('this monster', this)
         setInterval(() => {
           if ($('.body').getBoundingClientRect().left < 490) {
             game.increaseRound()
-
-            // console.log('this monster', this)
 
             $('.hero').classList.add('hited')
             $('.hit-button').disabled = true
@@ -752,18 +741,30 @@
           const displayWidth = document.body.clientWidth
         }, 1000);
       }
+
+
     }
-    class Game extends Actor {
+    class Game {
+      hero = new Hero(30, 10, true)
+      monster = new Monster(50, 15, true)
+
       constructor(round, monsterScore, heroScore) {
-        super();
         this.round = round
         this.monsterScore = monsterScore
         this.heroScore = heroScore
       }
 
+      gameStarts = () => {
+        this.monster.activateMonster()
+        this.hero.activateHero()
+      }
+
+
       increaseRound = () => this.round++
-      heroHit = () => this.heroScore++
-      monsterHit = () => this.monsterScore++
+
+      heroHit = () => this.monster.hp -= this.hero.str
+
+      monsterHit = () => this.hero.hp -= this.monster.str
 
       set increaseRound(round) {
         return this.round += round
@@ -779,14 +780,13 @@
     }
 
 
-    let hero = new Hero(30, 10, true, )
-    let monster = new Monster(50, 15, true)
-    let game = new Game(1, 1, 1)
 
-    hero.displayHp()
-    monster.displayHp()
-    monster.activateMonster()
-    hero.activateHero()
+    let game = new Game(1, 1, 1)
+    game.gameStarts()
+
+    console.log('hit',game.heroHit())
+    console.log('hp monster', game.monster.hp)
+
   </script>
 
 </body>

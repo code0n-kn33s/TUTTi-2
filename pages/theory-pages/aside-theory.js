@@ -7,5 +7,5 @@ const asideTheory = theory => `
 `
 
 const asideTheoryItems = theoryBlock => theoryBlock.data.map((theoryItem) => (`
-    <li class="aside-item" data-anchor="${theoryItem.key}" onclick="switchAside()">${theoryItem.title}</li>
+    <li class="aside-item ${ window.localStorage.getItem('currentTheory') === theoryItem.key ? 'active' : ''}" id="aside-${theoryItem.key}" data-anchor="${theoryItem.key}" onclick="switchAside('${theoryItem.key}')">${theoryItem.title}</li>
 `)).join('')
