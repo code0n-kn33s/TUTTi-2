@@ -1,36 +1,33 @@
-const animations = [{
-    title: 'Add 2 animations to element ',
-    subtitle: '',
+const animations = [
+  {
+    title: 'background-text',
+    subtitle: 'Движущийся background для БУКВ',
     text: '',
-    img: '',
+    img: 'background-text.png',
     code: `
-.elem.active{
-  animation: animation_1 4s linear, 4s animation_2 4s ease;
+#start_game {
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  display: block;
+  font-size: 32px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: url(./game-monster/ski.jpeg);
+  animation: 9s textBackground alternate ease-in-out infinite;
+
+  background-repeat: no-repeat;
+  background-position: 280% center;
+  background-size: 150%;
 }
 
-@keyframes animation_1 {
-  0% {
-    background-color: red;
-    left: 0px;
-    top: 0px;
-  }
-  100% {
-    background-color: red;
-    left: 0px;
-    top: 0px;
-  }
+#start_game:hover {
+  animation-play-state: paused;
 }
 
-@keyframes animation_2 {
-  0% {
-    background-color: red;
-    left: 0px;
-    top: 0px;
-  }
+@keyframes textBackground {
   100% {
-    background-color: cyan;
-    left: 0px;
-    top: 200px;
+    background-position: 0% center;
   }
 }
         `,

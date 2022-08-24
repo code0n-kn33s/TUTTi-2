@@ -141,3 +141,10 @@ button {
     cursor: pointer;
 }
 
+div.img {
+    position: relative;
+}
+
+div.img img {
+    width: auto;
+}

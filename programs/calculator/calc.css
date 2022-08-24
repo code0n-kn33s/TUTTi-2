@@ -1,13 +1,15 @@
 .calc-wrap {
   width: 100%;
   overflow: hidden;
+  text-align: center;
+    margin-top: 10%;
 }
 .code-calc {
-  float: left;
+
   width: calc( 100% - 450px);
 }
 .calc {
-  float: right; 
+  display: inline-block;
   width: 450px;
   border-radius: 13em/1em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);

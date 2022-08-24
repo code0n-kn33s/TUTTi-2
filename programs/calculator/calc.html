@@ -5,90 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Calculator</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/programs/calc.css">
+
+    <link rel="stylesheet" href="../../assets/libs/highlight/styles/xcode.min.css">
+    <script src="../../assets/libs/highlight/highlight.js"></script>
+
+  <link rel="stylesheet" href="../../assets/styles/reset.css">
+  <link rel="stylesheet" href="../../assets/styles/variables.css">
+  <link rel="stylesheet" href="../../assets/styles/header.css">
+  <link rel="stylesheet" href="calc.css">
 </head>
 
 <body>
-  <div class="nav">
-    <div id="bread-crumps"></div>
-    <div class="search">
-      <span>&#64;</span>
-      <input type="text">
-      <button>search</button>
+  <header>
+    <div class="link-to-main">
+      <a href="../../index.html">Back to main</a>
     </div>
-  </div>
-  <div class="header">
-    <div id="menu"></div>
-  </div>
+    <div class="logo"></div>
+    <div class="upd_button" onclick="document.location.reload()">
+      <span>&#10552;</span>
+      <span>&#10552;</span>
+    </div>
+  </header>
 
   <div class="container">
     <div class="calc-wrap">
-      <div class="code-calc">
-        <pre class="code">
-          <code>
-            let input = document.getElementsByClassName('calc__top--input')[0].getElementsByClassName('input')[0],
-                maxValue = document.getElementsByClassName('max')[0],
-                charAt = document.getElementsByClassName('char')[0],
-                numBtn = document.getElementsByClassName('num'),
-                simpleOp = document.getElementsByClassName('simple-op'),
-                holdup = false,
-                firstValue = 0,
-                secondValue = 0,
-                currentChar = ''; // нажaтие на цифры
-
-            for (let x = 0; x < numBtn.length; x++) {
-              numBtn[x].addEventListener('click', function () {
-                let i=this.getAttribute('data-value');
-
-                if (holdup) { input.value=''; holdup=false; };
-
-                if (input.value.length <=9 ) { input.value=input.value + i; }
-                  else { maxValue.classList=maxValue.classList + " active";
-                }
-              })
-            };
-
-            function btnFunc(attr) {
-              let buttonsCalc=document.getElementsByClassName('btn');
-              for (let x=0 ; x < buttonsCalc.length; x++) {
-                if (attr == buttonsCalc[x].getAttribute('data-value')) {
-                  return buttonsCalc[x];
-                  break;
-                }
-              }
-            }; // находит кнопку по аттрибуту
-
-            btnFunc( 'backspace').addEventListener('click', function() {
-              let lastSymbol=input.value.length - 1;
-              input.value=input.value.substring(lastSymbol, 0);
-            }); // удалить один символ
-
-            btnFunc('equally').addEventListener('click', function () {
-              secondValue=input.value;
-              input.value=e val(firstValue + currentChar + secondValue);
-              charAt.innerHTML='';
-              holdup=true;
-            }); //=равно
-
-            for (let i=0 ; i < simpleOp.length; i++) {
-              simpleOp[i].addEventListener('click', function () {
-                holdup=true;
-                firstValue=input.value;
-                currentChar=this.getAttribute('data-simple-op');
-                charAt.innerHTML=this.innerHTML;
-              });
-            };  // простые операции вычисления
-
-            btnFunc('ac').addEventListener('click', function () {
-              input.value='';
-            }); // збросить AC
-          </code>
-        </pre>
-      </div>
       <div class="calc">
 
         <div class="calc__top">
@@ -152,10 +95,7 @@
     </div>
   </div>
 
-  <script src="../../js/main/hilight.js"></script>
-  <script src="../../js/main/main.js"></script>
-  <script src="../../js/main/dynamic.js"></script>
-  <script src="../../js/programs/calc.js"></script>
+  <script src="calc.js"></script>
 
 </body>
 

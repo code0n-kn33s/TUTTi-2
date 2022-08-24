@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../assets/styles/reset.css">
+  <link rel="stylesheet" href="../../assets/styles/variables.css">
+  <link rel="stylesheet" href="../../assets/styles/header.css">
+  <link rel="stylesheet" href="./knife.css">
+  <title>Knife</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <div>
+      <a href="../../index.html">Back to main</a>
+    </div>
+    <div class="logo"></div>
+    <div class="upd_button" onclick="document.location.reload()">
+      <span>&#10552;</span>
+      <span>&#10552;</span>
+    </div>
+  </header>
+  <!-- end header -->
+  <div class="practice-container kletka-pole">
+    <div class="theory-inner">
+      <div class="theory-block">
+        <!-- practice here -->
+
+        <div class="game-wrapper" id="game">
+          <div class="tablo">
+            <button class="tablo-item" id="start_game">START THE GAME!</button>
+          </div>
+
+          <div id="sky-area">
+            <div class="sunset-sky"></div>
+            <div class="cloud1-wrap">
+              <div id="cloud1" class="cloud1">
+                <div class="cloud1 cloud1-1"></div>
+                <div class="cloud1 cloud1-2"></div>
+              </div>
+            </div>
+            <div class="cloud2-wrap">
+              <div id="cloud2" class="cloud2">
+                <div class="cloud2 cloud2-1"></div>
+                <div class="cloud2 cloud2-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="battle_area">
+
+            <div class="hero ">
+              <div class="hit-points hero-hit-points ">
+                <span class="hit-points-char">&#10084;</span>
+                <span class="hit-points-value hero-hp"></span>
+                <span class="hit-points-value hero-str"></span>
+              </div>
+              <button class="hit-button">
+                <img src="./game-monster/sword.png" alt="sword">
+              </button>
+              <div class="monster-hit"> </div>
+              <div class="head"></div>
+              <div class="back"> </div>
+              <div class="arms"></div>
+              <div class="legs"> </div>
+            </div>
+
+            <div class="monster">
+              <div class="hit-points monster-hit-points">
+                <span class="hit-points-char">&#10084;</span>
+                <span class="hit-points-value monster-hp"></span>
+                <span class="hit-points-value monster-str"></span>
+              </div>
+              <span class="body"> </span>
+              <span class="eyes">
+                <div class="hero-hit"></div>
+                <div class="monster-win-icon"></div>
+              </span>
+            </div>
+
+          </div>
+          <div class="waves">
+            <div class="wave-first"> </div>
+            <div class="wave-second"> </div>
+          </div>
+          <div class="sun">
+            <img class="sun-icon" src="./game-monster/sun.png" alt="sun">
+            <img class="moon-icon" src="./game-monster/luna.png" alt="moon">
+          </div>
+          <div id="score"></div>
+          <div class="help">
+            <div class="help-icon img">
+              <img src="./game-monster/question.png" alt="q">
+            </div>
+            <div class="help-text">
+              Не дай монстру <br> приблизиться <br>к твоему острову!
+            </div>
+          </div>
+          <div class="flash">
+            <div class="flash-img">
+              <img src="./game-monster/flash.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./knife.js"></script>
+</body>
+
+</html>

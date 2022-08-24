@@ -37,4 +37,20 @@ HTML
 }
         `,
 },
+  {
+    title: 'Полудуга',
+    subtitle: '',
+    text: '',
+    img: 'smile.png',
+    code: `
+div{
+  width: 100px;
+  height: 50px;
+  border-radius: 100px 100px 0 0;
+  border-top: 5px solid red;
+  border-left: 5px solid red;
+  border-right: 5px solid red;
+}
+        `,
+},
 ]

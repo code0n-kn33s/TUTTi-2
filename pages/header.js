@@ -25,7 +25,11 @@
                 <ul id="nav-list">
                     ${headerItems(connectNavs)}
                 </ul>
-                <p>Programs: <a href="./programs/cofeMachine/coffeM_index.html">COFFE</a></p>
+                <p class="header-programs">Programs:
+                    <a href="./programs/cofeMachine/coffe.html">Coffe</a>
+                    <a href="./programs/calculator/calc.html">Calc</a>
+                    <a href="./programs/knife/knife.html">Knife</a>
+                </p>
                 <p>
                     <a data-link="theory" id="nav-theory" class="header-item theory-link ${currentPage === 'theory' ? 'active' : ''}">Theory</a>
                     <a href="./practice.html">Practice</a>

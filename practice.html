@@ -29,7 +29,7 @@
     }
 
     .practice-container {
-      width: 85%;
+      width: 879px;
       margin: auto;
       margin-top: 120px;
       min-height: calc(100vh - 220px);
@@ -66,7 +66,7 @@
     }
 
     .kletka-pole {
-      background-color: #ffffef;
+      /* background-color: #ffffef; */
     }
   </style>
 
@@ -118,6 +118,44 @@
       border: 10px solid black;
     }
 
+
+
+    .head:after {
+      content: "";
+      position: absolute;
+      height: 11px;
+      width: 36px;
+      left: 26px;
+      border-radius: 50%;
+      transition: 1s ease;
+    }
+
+    #game.hero_win .head:after {
+      top: 53%;
+      border-top: none;
+      border-bottom: 11px solid #000;
+    }
+
+    #game.hero_defeated .hero .head:after {
+      top: 58%;
+      border-top: 11px solid #000;
+    }
+
+    #game.hero_defeated .hero {
+      animation: 1s heroDefeated 0.5s ease-in forwards;
+    }
+
+    @keyframes heroDefeated {
+      to {
+        transform: scale(0.6) rotate(-74deg) translate(-71px, 9px);
+      }
+    }
+
+    #game.hero_defeated .hero .hit-points {
+      transition: .3s;
+      visibility: hidden;
+    }
+
     .head:before {
       content: "";
       position: absolute;
@@ -129,6 +167,11 @@
       border-radius: inherit;
       box-shadow: 25px 0 0 black;
       animation: blinkHero 3s infinite linear;
+    }
+
+    #game.hero_defeated .head:before {
+      animation-play-state: paused;
+      transform: scaleY(0.2) !important;
     }
 
     .one:nth-child(1) .head:after {
@@ -150,18 +193,6 @@
       left: 50%;
       transform: translateX(-50%);
     }
-
-    /* .back:before {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background: black;
-      left: 0;
-      top: -27px;
-      transform: translateX(41px) rotate(25deg);
-      clip-path: polygon(50% 0, 0 100%, 100% 100%);
-    } */
 
     .arms {
       position: absolute;
@@ -198,36 +229,6 @@
       border-left: 10px solid black;
       left: calc(50% - 24px);
       transform: rotate(135deg);
-    }
-
-    .hero.hit .arms:before {
-      animation: 1s moveArm;
-    }
-
-
-
-    @keyframes moveArm {
-
-      50% {
-        transform: rotate(-50deg);
-        top: -14%;
-        left: 380%;
-      }
-
-      100% {
-        transform: rotate(-30deg);
-        left: 280%;
-      }
-    }
-
-    @keyframes moveKnife {
-      50% {
-        transform: translateX(50px) rotate(61deg);
-      }
-
-      100% {
-        transform: translateX(0px) rotate(28deg);
-      }
     }
 
     /* blink */
@@ -270,43 +271,10 @@
       position: absolute;
       bottom: calc(-1 * 32vmin / 2 - 4vmin);
       left: 47%;
-      animation:
-        wander 2.5s linear infinite alternate,
-        wave 3s linear infinite,
-        bounce 1s infinite alternate;
     }
 
-    .monster.hited .eyes {
-      animation: wanderHited 2s linear alternate;
-    }
-
-    .monster.hited .monster-hit-points {
-      animation: wanderHited 2s linear alternate;
-    }
-
-    .monster.hited .body {
-      animation:
-        wanderHited 2s linear infinite alternate,
-        waveHited 1s linear infinite,
-        bounceHited 1s alternate infinite;
-    }
-
-    @keyframes bounceHited {
-      to {
-        bottom: calc(-1 * 6vmin / 2 - 2vmin);
-      }
-    }
-
-    @keyframes waveHited {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes wanderHited {
-      to {
-        left: calc(60% - 6vmin + 2vmin);
-      }
+    .monster.angry .body {
+      background-color: #FF4500;
     }
 
     .eyes {
@@ -315,7 +283,6 @@
       position: absolute;
       bottom: 2vmin;
       left: 47%;
-      animation: wander 2.5s linear infinite alternate;
     }
 
     .monster-hit-points {
@@ -324,7 +291,6 @@
       position: absolute;
       bottom: 14vmin;
       left: 47%;
-      animation: wander 2.5s linear infinite alternate;
       z-index: 123;
     }
 
@@ -362,7 +328,6 @@
 
     @keyframes wander {
       to {
-        /* left: calc(60% - 6vmin + 2vmin); */
         left: 8%;
       }
     }
@@ -386,6 +351,27 @@
 
     /* end monster */
     /*  sky */
+    .cloud1-wrap {
+      transform: translatex(100px);
+      z-index: 1;
+      transition: 1s ease 0.5s;
+    }
+
+    #game.started .cloud1-wrap {
+      transform: translatex(0px);
+    }
+
+    #game.started .cloud2-wrap {
+      transform: translatex(0px);
+    }
+
+
+    .cloud2-wrap {
+      transform: translatex(-121px);
+      z-index: 1;
+      transition: 1s ease 0.5s;
+    }
+
     .cloud1 {
       opacity: 1;
       border-radius: 150px / 30px;
@@ -430,7 +416,6 @@
       top: -12px;
     }
 
-    /* background: linear-gradient(top, #0671bc 0%, #afd8e7 100%); */
     /* end sky */
 
 
@@ -438,6 +423,8 @@
       display: flex;
       background: url('./game-monster/back.png') no-repeat;
       background-size: auto 100%;
+      z-index: 11;
+      position: relative;
     }
 
     .battle_area:before {
@@ -462,7 +449,6 @@
     }
 
     .wave-first {
-      animation: waves-left 3s ease-in-out infinite;
       transform: scaleX(-1);
     }
 
@@ -470,6 +456,13 @@
       z-index: -1;
       margin-top: -21px;
       margin-right: -35px;
+    }
+
+    #game.started .wave-first {
+      animation: waves-left 3s ease-in-out infinite;
+    }
+
+    #game.started .wave-second {
       animation: waves-right 3s ease-in-out infinite;
     }
 
@@ -554,13 +547,28 @@
       left: -39px;
     }
 
+
+
     .monster-hit,
+    .monster-win-icon,
     .hero-hit {
       display: none;
       height: 110px;
       width: 110px;
       background-size: contain;
       position: absolute;
+    }
+
+
+    .monster-win-icon {
+      background: url('./game-monster/gg.png') no-repeat;
+      top: -86px;
+      left: -39px;
+      height: 86px;
+    }
+
+    #game.hero_defeated .monster-win-icon {
+      display: block;
     }
 
     .hero.hited .monster-hit {
@@ -580,8 +588,309 @@
       transform: rotate(28deg);
     }
 
+    #game.hero_defeated .hit-button {
+      animation: 2s dropKnife ease-in;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes dropKnife {
+      30% {
+        transform: translate(60px, -6px) rotate(-268deg);
+      }
+
+      60% {
+        transform: translate(27px, -52px) rotate(385deg);
+      }
+
+      100% {
+        transform: translate(-11px, -226px) rotate(584deg);
+      }
+    }
+
+    .hit-points {
+      display: none;
+    }
+
+    #game.started .hit-points {
+      display: block;
+    }
+
+    /* hero hit */
+    .hero.hit .arms:before {
+      animation: 1s moveArm;
+    }
+
     .hero.hit .hit-button {
       animation: 1s moveKnife;
+    }
+
+    @keyframes moveArm {
+
+      50% {
+        transform: rotate(-50deg);
+        top: -14%;
+        left: 380%;
+      }
+
+      100% {
+        transform: rotate(-30deg);
+        left: 280%;
+      }
+    }
+
+    @keyframes moveKnife {
+      50% {
+        transform: translateX(50px) rotate(61deg);
+      }
+
+      100% {
+        transform: translateX(0px) rotate(28deg);
+      }
+    }
+
+    /* hero win */
+    #game.hero_win .arms:before {
+      animation: 1s winningMoveArm reverse ease-in-out forwards, 1s winningMoveArm 1s infinite ease-in-out;
+    }
+
+    #game.hero_win .arms:after {
+      animation: 2s winningMoveLeftArm 1s infinite ease-in-out;
+    }
+
+    #game.hero_win .hit-button {
+      animation: 1s winningMoveKnife ease-in forwards, 1s winningMoveKnifeDown ease-in 1s forwards;
+    }
+
+    @keyframes winningMoveLeftArm {
+      50% {
+        transform: rotate(75deg);
+        top: -24%;
+        left: -10px;
+      }
+
+      100% {
+        transform: rotate(30deg);
+      }
+    }
+
+    @keyframes winningMoveArm {
+      50% {
+        transform: rotate(-100deg);
+        top: -24%;
+        left: 380%;
+      }
+
+      100% {
+        transform: rotate(-30deg);
+        left: 280%;
+      }
+    }
+
+    @keyframes winningMoveArmSalute {
+      50% {
+        transform: rotate(-100deg);
+        top: -24%;
+        left: 380%;
+      }
+
+      100% {
+        transform: rotate(-30deg);
+        left: 280%;
+      }
+    }
+
+    @keyframes winningMoveKnife {
+      30% {
+        transform: translateX(150px) rotate(190deg);
+
+      }
+
+      60% {
+        transform: translateX(300px) rotate(360deg);
+      }
+
+      100% {
+        transform: translateX(450px) rotate(490deg);
+      }
+    }
+
+    @keyframes winningMoveKnifeDown {
+      100% {
+        transform: translate(450px, 450px);
+        opacity: 0
+      }
+    }
+
+    /* monster move */
+    #game.started .monster.move .body {
+      animation:
+        wander 2.5s linear infinite alternate,
+        wave 3s linear infinite,
+        bounce 1s infinite alternate;
+    }
+
+    #game.started .monster.move .eyes {
+      animation: wander 2.5s linear infinite alternate;
+    }
+
+    #game.started .monster.move .monster-hit-points {
+      animation: wander 2.5s linear infinite alternate;
+    }
+
+    /* monster hited */
+    #game.started .monster.hited .eyes {
+      animation: wanderHited 2s linear alternate;
+    }
+
+    #game.started .monster.hited .monster-hit-points {
+      animation: wanderHited 2s linear alternate;
+    }
+
+    #game.started .monster.hited .body {
+      animation:
+        wanderHited 2s linear infinite alternate,
+        waveHited 1s linear infinite,
+        bounceHited 1s alternate infinite;
+    }
+
+
+    /* monster win */
+    #game.hero_defeated .monster .eyes {
+      animation: wanderHited 2s linear alternate;
+    }
+
+    #game.hero_defeated .monster .monster-hit-points {
+      animation: wanderHited 2s linear alternate;
+    }
+
+    #game.hero_defeated .monster .body {
+      animation:
+        wanderHited 2s linear infinite alternate,
+        waveHited 1s linear infinite,
+        bounceHited 1s alternate infinite;
+    }
+
+    @keyframes bounceHited {
+      to {
+        bottom: calc(-1 * 6vmin / 2 - 2vmin);
+      }
+    }
+
+    @keyframes waveHited {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes wanderHited {
+      to {
+        left: calc(60% - 6vmin + 2vmin);
+      }
+    }
+
+    /* monster defeated */
+    #game.hero_win .monster .body {
+      animation:
+        wanderDefited 2s linear alternate,
+        waveDefited 1s linear;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+
+    #game.hero_win .monster .eyes {
+      animation: wanderDefited 2s linear alternate;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+
+    #game.hero_win .monster .monster-hit-points {
+      animation: wanderDefited 2s linear alternate;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes waveDefited {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes wanderDefited {
+      from {
+        margin-bottom: 0%;
+      }
+
+      to {
+        margin-bottom: -50%;
+        opacity: 0;
+      }
+    }
+
+    /* tablo */
+    .tablo {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: fit-content;
+      margin: auto;
+      top: 10%;
+      left: -5%;
+    }
+
+    .tablo-item {
+      display: none;
+      z-index: 999;
+    }
+
+    #start_game,
+    #stop_game,
+    #win_game,
+    #defeat_game {
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      display: block;
+      font-size: 32px;
+      font-weight: 900;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      animation: 5s textBackgroundLeft alternate ease-in-out forwards;
+
+      background-repeat: no-repeat;
+      background-position: 280% center;
+      background-size: 150%;
+    }
+
+    #start_game {
+      background-image: url(./game-monster/text-fones/ski.jpeg);
+    }
+
+    #stop_game {
+      background-image: url(./game-monster/text-fones/ski.jpeg);
+      display: none;
+    }
+
+    #game.started #stop_game {
+      display: block;
+    }
+
+
+    #game.started #start_game {
+      animation-play-state: paused;
+      display: none;
+      opacity: 0;
+    }
+
+    @keyframes textBackgroundLeft {
+      100% {
+        background-position: 0% center;
+      }
+    }
+
+    @keyframes textBackgroundUp {
+      100% {
+        background-position: 100% top;
+      }
     }
 
     /* end practice styles here */
@@ -610,27 +919,34 @@
       <div class="theory-block">
         <!-- practice here -->
 
-        <div class="game-wrapper">
-
+        <div class="game-wrapper" id="game">
+          <div class="tablo">
+            <button class="tablo-item" id="start_game">START THE GAME!</button>
+          </div>
 
           <div id="sky-area">
             <div class="sunset-sky"></div>
-            <div id="cloud1" class="cloud1">
-              <div class="cloud1 cloud1-1"></div>
-              <div class="cloud1 cloud1-2"></div>
+            <div class="cloud1-wrap">
+              <div id="cloud1" class="cloud1">
+                <div class="cloud1 cloud1-1"></div>
+                <div class="cloud1 cloud1-2"></div>
+              </div>
             </div>
-            <div id="cloud2" class="cloud2">
-              <div class="cloud2 cloud2-1"></div>
-              <div class="cloud2 cloud2-2"></div>
+            <div class="cloud2-wrap">
+              <div id="cloud2" class="cloud2">
+                <div class="cloud2 cloud2-1"></div>
+                <div class="cloud2 cloud2-2"></div>
+              </div>
             </div>
           </div>
 
-
           <div class="battle_area">
+
             <div class="hero ">
-              <div class="hero-hit-points ">
+              <div class="hit-points hero-hit-points ">
                 <span class="hit-points-char">&#10084;</span>
                 <span class="hit-points-value hero-hp"></span>
+                <span class="hit-points-value hero-str"></span>
               </div>
               <button class="hit-button">
                 <img src="./game-monster/sword.png" alt="sword">
@@ -643,19 +959,17 @@
             </div>
 
             <div class="monster">
-              <div class="monster-hit-points">
+              <div class="hit-points monster-hit-points">
                 <span class="hit-points-char">&#10084;</span>
                 <span class="hit-points-value monster-hp"></span>
+                <span class="hit-points-value monster-str"></span>
               </div>
               <span class="body"> </span>
               <span class="eyes">
                 <div class="hero-hit"></div>
+                <div class="monster-win-icon"></div>
               </span>
-
             </div>
-
-            <div class="defeat">Defeat &#9785;</div>
-            <div class="defeat">Win &#9786;</div>
 
           </div>
           <div class="waves">
@@ -674,26 +988,14 @@
 
   <script>
     class Actor {
-      constructor(hp, str, state, actor) {
+      constructor(hp, str) {
         this.hp = hp
         this.str = str
-        this.state = state
-        this.actor = actor
       }
 
-      set setHp(damage) {
-        return this.hp - damage
-      }
+      raiseStr = () => this.str += 5
 
-      get getHp() {
-        return this.hp
-      }
-
-      setStr = val => this.str + val
-
-      setState = () => !this.state
-
-      hit = () => this.hp -= this.str
+      raiseHp = () => this.str += 10
     }
 
 
@@ -703,19 +1005,31 @@
 
         $('.hit-button').addEventListener('click', (e) => {
 
-          $('.hero').classList.toggle('hit')
+          $('.hero').classList.add('hit')
           $('.hit-button').disabled = true
 
           if ($('.body').getBoundingClientRect().left < 505) {
-            $('.monster').classList.add('hited')
-          }
-          console.log('this hero', this)
+            game.heroHit()
 
-          setTimeout(() => {
-            $('.hero').classList.remove('hit')
-            $('.monster').classList.remove('hited')
-            $('.hit-button').disabled = false
-          }, 1000)
+            $('.monster-hp').innerText = game.monster.hp
+
+            if (game.monster.hp <= 0) {
+              $('.monster').classList.add('angry')
+              $('#start_game').innerText = 'TRY AGAIN?'
+              game.heroWin()
+            } else {
+              $('.monster').classList.add('hited')
+            }
+          }
+
+          if (!$('.monster').classList.contains('defeated')) {
+            setTimeout(() => {
+              $('.hero').classList.remove('hit')
+              $('.monster').classList.remove('hited')
+
+              $('.hit-button').disabled = false
+            }, 800)
+          }
         })
       }
     }
@@ -723,70 +1037,103 @@
     class Monster extends Actor {
       activateMonster = () => {
         $('.monster-hp').innerText = this.hp
-        console.log('this monster', this)
+
+        $('.monster').classList.add('move')
+
         setInterval(() => {
-          if ($('.body').getBoundingClientRect().left < 490) {
+          if ($('.body').getBoundingClientRect().left < 490 && !($('.hero').classList.contains('hit'))) {
             game.increaseRound()
 
-            $('.hero').classList.add('hited')
+            game.monsterHit()
+            $('.hero-hp').innerText = game.hero.hp
+
+            if (game.hero.hp <= 0) {
+              $('#start_game').innerText = 'TRY AGAIN?'
+              $('.monster').classList.add = 'angry'
+
+              game.heroDefeated()
+            } else {
+              $('.hero').classList.add('hited')
+            }
             $('.hit-button').disabled = true
 
-            setTimeout(() => {
-              $('.hero').classList.remove('hited')
-              $('.hit-button').disabled = false
-            }, 1500)
+            if (!$('.hero').classList.contains('defeated')) {
+              setTimeout(() => {
+                $('.hero').classList.remove('hited')
+                $('.hit-button').disabled = false
+              }, 1500)
+            }
           }
 
           const monsterPosition = 500
           const displayWidth = document.body.clientWidth
         }, 1000);
       }
-
-
     }
-    class Game {
-      hero = new Hero(30, 10, true)
-      monster = new Monster(50, 15, true)
 
-      constructor(round, monsterScore, heroScore) {
-        this.round = round
-        this.monsterScore = monsterScore
-        this.heroScore = heroScore
+
+    class Game {
+      hero = new Hero(30, 25)
+      monster = new Monster(50, 6)
+      round = 0
+
+      state = {
+        gameStates: ['started', 'hero_win', 'hero_defeated', 'stoped'],
+        current: 'stoped'
       }
 
       gameStarts = () => {
+        this.round += 1
+
+        this.hero.hp = 30;
+        this.monster.hp = 50;
+
+        $('#game').classList.remove('hero_win', 'hero_defeated', 'stoped')
+        $('#game').classList.add('started')
+
         this.monster.activateMonster()
         this.hero.activateHero()
+
+        $('.hit-button').disabled = false
+
+        this.state.current = 'started'
       }
 
+      heroWin = () => {
+        this.state.current = 'hero_win'
+        $('#game').classList.remove('started', 'hero_defeated')
+        $('#game').classList.add('hero_win')
+
+        $('.monster').classList.remove('move')
+      }
+
+      heroDefeated = () => {
+        this.state.current = 'hero_defeated'
+        $('#game').classList.remove('started', 'hero_win')
+        $('#game').classList.add('hero_defeated')
+
+        $('.monster').classList.remove('move')
+      }
+
+      gameStoped = () => {
+        $('#game').classList.remove('hero_win', 'hero_defeated', 'started')
+        $('#game').classList.add('stoped')
+
+        this.state.current = 'stoped'
+      }
 
       increaseRound = () => this.round++
 
       heroHit = () => this.monster.hp -= this.hero.str
 
       monsterHit = () => this.hero.hp -= this.monster.str
-
-      set increaseRound(round) {
-        return this.round += round
-      }
-
-      get showRound() {
-        return this.round
-      }
-
-      raiseStr = () => this.str += 5
-
-      raiseHp = () => this.str += 10
     }
 
+    const game = new Game()
 
-
-    let game = new Game(1, 1, 1)
-    game.gameStarts()
-
-    console.log('hit',game.heroHit())
-    console.log('hp monster', game.monster.hp)
-
+    $('#start_game').addEventListener('click', e => {
+      game.gameStarts()
+    })
   </script>
 
 </body>
