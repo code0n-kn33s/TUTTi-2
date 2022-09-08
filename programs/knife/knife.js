@@ -23,7 +23,7 @@ class Hero extends Actor {
       $('.hero').classList.add('hit')
       $('.hit-button').disabled = true
 
-      if ($('.body').getBoundingClientRect().left < 495) {
+      if ($('.body').offsetLeft < 120) {
         game.heroHit()
 
         $('.monster-hp').innerText = game.monster.hp
@@ -54,8 +54,8 @@ class Monster extends Actor {
 
     $('.monster').classList.add('move')
 
-    setInterval(() => {
-      if ($('.body').getBoundingClientRect().left < 480) {
+    let timerId = setInterval(() => {
+      if ($('.body').offsetLeft < 100) {
         game.increaseRound()
 
         game.monsterHit()
@@ -74,6 +74,7 @@ class Monster extends Actor {
           setTimeout(() => {
             $('.hero').classList.remove('hited')
             $('.hit-button').disabled = false
+            clearInterval(timerId)
           }, 1500)
         }
       }
@@ -100,15 +101,17 @@ class Game {
   gameStarts = () => {
     this.round += 1
 
+
     if (this.round > 1) {
       $('.monster').classList.add('angry')
-
       $('.game-wrapper').classList.add('night')
       $('.flash').classList.add('active')
+
     }
     this.displayResults()
 
-    this.hero.hp = 30;
+
+    this.hero.hp = 10;
     this.monster.hp = 50;
 
     $('#game').classList.remove('hero_win', 'hero_defeated', 'stoped')
