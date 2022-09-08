@@ -85,4 +85,20 @@ const animations = [
 }
         `,
   },
+  {
+    title: 'Хвостик при движении',
+    subtitle: '',
+    text: '',
+    img: 'Cometa.png',
+    code: `
+  .example {
+      animation: example-animation 1s linear infinite;
+  }
+
+  .example:after {
+      animation: example-animation 1s linear infinite
+      animation-delay: 50ms;
+  }
+        `,
+  },
 ]

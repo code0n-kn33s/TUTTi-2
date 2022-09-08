@@ -348,7 +348,7 @@ pre code.hljs {
   z-index: 22;
   justify-content: center;
   margin: auto;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -398,3 +398,40 @@ pre code.hljs {
   cursor: pointer;
 }
 
+/* theory content items */
+.accordion-content-list {
+
+}
+.accordion-content-list-title {
+
+}
+.accordion-content-list-items {
+
+}
+.accordion-content-list-item {
+
+}
+.accordion-content-title {
+
+}
+.accordion-content-method {
+
+}
+.accordion-content-item {
+
+}
+.accordion-content-img {
+
+}
+.accordion-content-code {
+
+}
+.accordion-content-text {
+
+}
+.accordion-content-text {
+
+}
+.accordion-content-link {
+
+}
