@@ -38,4 +38,28 @@ async function foo() {
     await bar()
 } `,
     },
+    {
+        title: 'Fetch',
+        subtitle: 'syntax',
+        text: '',
+        code: `
+fetch('https://httpbin.org/get')
+    .then(res => res.json())
+    .then(res => console.log('response:', res))
+    .catch(error => console.log('errror', error))
+
+// fetch with header POST
+fetch('http://localhost:3003/auth/login', {
+    method: 'POST',
+    headers: {
+        'Content-type': 'application/json'
+    },
+    body: JSON.stringify({
+    email: this.state.login,
+    password: this.state.password
+    })
+})
+.then(res => res.json())
+.then(res => console.log('response:', res));`,
+    },
 ]
