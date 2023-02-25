@@ -10,6 +10,8 @@ const pens_js = {
         { key: 'prototypes', title: 'prototypes', themes: prototypes },
         { key: 'async', title: 'async', themes: async },
         { key: 'sm_programs', title: 'sm_programs', themes: sm_programs },
+        { key: 'must_have', title: 'must_have', themes: must_have },
+        { key: 'api_js', title: 'api_js', themes: api_js },
 
     ]
 }

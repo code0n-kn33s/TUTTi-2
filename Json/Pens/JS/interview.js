@@ -13,4 +13,12 @@ delete newobj.name
 console.log(obj.name) // undefined
 `
     },
+    {
+        title: 'Оставить в строке только числа',
+        subtitle: '',
+        text: '3fdsf456dr',
+        code: `
+'3fdsf456dr'.split('').filter(value => !isNaN(parseInt(value))).join('') //'3456'
+`
+    },
 ]

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Асинхронно подключаем файлы</h1>
+    <script>
+      /*
+      // callback hell
+      let func = (source, callback) => {
+        let script = document.createElement("script");
+        script.setAttribute("src", source);
+
+        script.onload = () => callback(null, script);
+        script.onerror = (err) => console.log(this);
+
+        document.body.appendChild(script);
+      };
+
+      func("foo.js", function (error, script) {
+        if (error) {
+          console.log("Error! foo", error);
+        } else {
+          console.log("Success! foo", script);
+
+          func("bar.js", function (error, script) {
+            if (error) {
+              console.table("Error! bar", error);
+            } else {
+              console.log("Success! bar", script);
+
+              func("baz.js", function (error, script) {
+                if (error) {
+                  console.table("Error! baz", error);
+                } else {
+                  console.log("Success! baz", script);
+                }
+              });
+            }
+          });
+        }
+      });
+*/
+      // let currencyOuter = fetch(
+      //   "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json"
+      // ).then((data) => {
+      //   console.log(">> Outer fetch data ", data);
+
+      //   return data.json();
+      // });
+
+      // console.log(">> currencyOuter", currencyOuter);
+
+      // promiseHell
+
+      let promise = new Promise((res, rej) => {
+        let currency = fetch(
+          "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json"
+        ).then((data) => {
+          res(data.json());
+        });
+      }).then((id) => {
+        let newPromise = new Promise((res, rej) => {
+          return fetch(
+            `https://bank.gov.ua/NBUStatService/v1/statdirectory/${id}?json`
+          ).then((data) => {
+            res(data.json());
+          });
+        })
+      });
+
+
+
+      // .then(arg => console.log('>> arg',arg)).catch(err => console.log('err', err))
+
+      /*
+      // resolve callback hell
+      const arr = async () => {
+        const func = async () => {
+          try {
+          const res = await fetch(
+            "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json"
+          );
+          const data = await res.json();
+
+          return data;
+        } catch {}
+
+      }
+      console.log('func await', func());
+
+
+        const reserved = await fetch(
+          "https://bank.gov.ua/NBUStatService/v1/statdirectory/res?date=201708&json"
+        )
+          .then((data) => data.json())
+          .catch(console.table);
+
+          console.log('>> reserved', reserved);
+        // console.log("data ---> ", reserved.slice());
+      };
+
+      arr();
+
+
+      const getCurrency = async () => {
+        try {
+          const res = await fetch("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json");
+          const data = await res.json();
+
+          return data;
+        } catch (e) {
+          console.error(e);
+        }
+      };
+
+      async function main() {
+          const currency = await getCurrency();
+
+          console.log('^^^ currency', currency);
+      }
+
+      main();
+      */
+    </script>
+  </body>
+</html>

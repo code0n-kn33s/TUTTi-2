@@ -1,69 +1,758 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <link rel="stylesheet" href="./assets/styles/variables.css" />
+    <link rel="stylesheet" href="./assets/styles/header.css" />
+    <title>Practice</title>
+    <style>
+      body,
+      html {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        height: fit-content;
+        color: #333;
+        font-size: 18px;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/styles/reset.css">
-  <link rel="stylesheet" href="./assets/styles/variables.css">
-  <link rel="stylesheet" href="./assets/styles/header.css">
-  <title>Practice</title>
-  <style>
-    body,
-    html {
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      height: fit-content;
-      color: #333;
-      font-size: 18px;
-    }
+      button {
+        color: #333;
+      }
 
-    button {
-      color: #333;
-    }
+      header {
+        padding: 20px;
+      }
 
-    header {
-      padding: 20px;
-    }
+      .practice-container {
+        width: 879px;
+        margin: auto;
+        margin-top: 120px;
+        min-height: calc(100vh - 220px);
+        padding: 20px 30px 0;
+      }
+    </style>
 
-    .practice-container {
-      width: 879px;
-      margin: auto;
-      margin-top: 120px;
-      min-height: calc(100vh - 220px);
-      padding: 20px 30px 0;
-    }
-  </style>
+    <script>
+      function $(elem) {
+        return document.querySelector(elem);
+      }
+    </script>
 
-  <script>
-    function $(elem) {
-      return document.querySelector(elem)
-    }
-  </script>
-</head>
+    <style>
+      .container {
+        margin: 100px auto;
+        height: 622px;
+        position: relative;
+        display: flex;
+        width: fit-content;
+      }
+      .parking-wrap {
+        display: inline-block;
+        width: 600px;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        background: no-repeat url("./parking/newParking/parking.png");
+        background-size: auto 100%;
+      }
 
-<body>
-  <!-- header -->
-  <header>
-    <div>
-      <a href="./index.html">pens</a>
-      <a href="./index.html">Theory</a>
+      .parking div {
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .places {
+        background-image: url("./parking/parking.webp");
+        width: 40%;
+        height: inherit;
+      }
+
+      .stop {
+        background-image: url("./parking/stop.png");
+        width: 19%;
+        height: inherit;
+        position: absolute;
+        background-repeat: no-repeat;
+        margin: auto;
+        background-size: 110% !important;
+        left: -11px;
+        right: 0;
+        bottom: 35px;
+        height: 50%;
+      }
+
+      .road {
+        background-image: url("./parking/road.png");
+        width: 60%;
+        height: inherit;
+      }
+
+      .checking-post {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        top: -64px;
+        right: 48px;
+      }
+
+      .checking-post button {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        color: antiquewhite;
+        font-weight: 600;
+        margin: 10px;
+      }
+
+      .checking-post button:hover {
+        border: 1px dashed white;
+        transition: 0.1s ease;
+      }
+
+      .checking-post button#approve {
+        background-color: darkgreen;
+      }
+
+      .checking-post button#reject {
+        background-color: brown;
+      }
+
+      .checking-post {
+        display: none;
+      }
+
+      .car.checking ~ .stop .checking-post {
+        display: block;
+      }
+
+      .tablo {
+        padding: 5px 10px;
+        background-color: rgb(50, 80, 50);
+        position: relative;
+        height: 38px;
+        overflow: hidden;
+      }
+
+      .tablo .dots {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+      }
+
+      .tablo .text {
+        font-family: monospace;
+
+        font-size: 23px;
+        font-weight: bold;
+        color: #00ff00;
+        position: absolute;
+        z-index: 1;
+        overflow: hidden;
+        user-select: none;
+        text-transform: uppercase;
+        animation: text-animation 2s linear alternate-reverse;
+      }
+
+      .text > div {
+        display: inline-block;
+      }
+
+      @keyframes text-animation {
+        0% {
+          left: 100%;
+        }
+        100% {
+          left: -100%;
+        }
+      }
+
+      .cars-list {
+        height: 100%;
+        width: 300px;
+        display: flex;
+        background: #84d134;
+        flex-direction: column;
+        padding: 5px;
+      }
+      .cars-list-item {
+        /* border: 1px dotted; */
+        margin-bottom: 7px;
+        padding: 4px;
+        font-size: 13px;
+        display: flex;
+        background: white;
+        justify-content: space-between;
+      }
+
+      .cars-list-item.active {
+        background: #435267;
+        color: white;
+      }
+      .cars-list-info-wrap {
+      }
+      .car-item-photo img {
+        height: 70px;
+      }
+      .car-item-state {
+      }
+      .car-item-name {
+      }
+      .car-item-proffesion {
+      }
+      .car-item-cash {
+      }
+      .car-item-battery {
+      }
+
+      .car {
+        position: absolute;
+        bottom: -100px;
+        left: 254px;
+        width: 100px;
+        transform: rotate(83deg);
+        transition: 0.5s;
+      }
+
+      .car.wait {
+        bottom: 21px;
+      }
+
+      .car.check {
+        bottom: 101px;
+      }
+
+      .car1 {
+        width: 150px;
+        left: 271px;
+      }
+      .car1.wait {
+      }
+
+      .car1.second {
+        left: 191px;
+      }
+
+      .car1.driveToParking {
+        bottom: 367px;
+      }
+      .car1.parking {
+        left: 117px;
+        transform: rotate(-10deg);
+        bottom: 448px;
+      }
+
+      .car2 {
+        width: 100px;
+        left: 283px;
+        transform: rotate(95deg);
+      }
+
+      .car2.driveToParking {
+        bottom: 433px;
+      }
+
+      .car2.parking {
+        left: 420px;
+        transform: rotate(-1deg);
+        bottom: 384px;
+      }
+
+      .car2.second {
+        left: 218px;
+      }
+
+      .car3 {
+        height: 50px;
+        width: 150px;
+        transform: rotate(87deg);
+      }
+
+      .car3.wait {
+        bottom: 53px;
+      }
+      .car3.check {
+        bottom: 83px;
+      }
+
+      .car3.second {
+        left: 191px;
+      }
+
+      .car3.driveToParking {
+        bottom: 227px;
+      }
+
+      .car3.parking {
+        left: 117px;
+        transform: rotate(-1deg);
+        bottom: 250px;
+      }
+
+      .car4 {
+        width: 150px;
+        transform: rotate(85deg);
+      }
+      .car4.wait {}
+      .car4.check {}
+
+
+      .car4.second {
+        left: 191px;
+      }
+      .car4.driveToParking {
+        bottom: 408px;
+      }
+
+      .car4.parking {
+        bottom: 462px;
+        left: 360px;
+        transform: rotate(172deg);
+      }
+
+      .car5 {
+        transform: rotate(100deg);
+        left: 283px;
+      }
+
+      .car5.wait {
+      }
+
+      .car5.second {
+        left: 213px;
+      }
+
+      .car5.driveToParking {
+        bottom: 255px;
+      }
+
+      .car5.parking {
+        left: 117px;
+        transform: rotate(13deg);
+        bottom: 309px;
+      }
+
+      .car6 {
+        transform: rotate(105deg);
+        left: 283px;
+      }
+      .car6.wait {
+      }
+
+      .car6.second {
+        left: 213px;
+      }
+
+      .car6.driveToParking {
+        bottom: 396px;
+      }
+
+      .car6.parking {
+        left: 117px;
+        transform: rotate(13deg);
+        bottom: 386px;
+      }
+
+      .charge {
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        opacity: 0;
+        border-radius: 50%;
+        background-color: #435267;
+        border: 0px solid rgba(0,0,0,0);
+        overflow: hidden;
+        transition: 0.8s;
+      }
+
+      .charge-inner {
+        position: relative;
+
+      }
+
+      .charge.reveil {
+        opacity: 0.8;
+        border: 5px solid #435267;
+      }
+
+      .charge.after {
+
+      }
+
+      .charge.before {
+
+      }
+
+      .charge1 {
+        left: 117px;
+        bottom: 448px;
+      }
+      .charge2 {
+        left: 420px;
+        bottom: 384px;
+      }
+      .charge3 {
+        left: 117px;
+        bottom: 250px;
+      }
+      .charge4 {
+        bottom: 462px;
+        left: 360px;
+      }
+      .charge5 {
+        left: 45px;
+        bottom: 326px;
+      }
+      .charge6 {
+        left: 45px;
+        bottom: 399px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header>
+      <div>
+        <a href="./index.html">pens</a>
+        <a href="./index.html">Theory</a>
+      </div>
+      <p>
+        Programs: <a href="./programs/cofeMachine/coffeM_index.html">COFFE</a>
+      </p>
+      <div class="logo"></div>
+      <div class="upd_button" onclick="document.location.reload()">
+        <span>&#10552;</span>
+        <span>&#10552;</span>
+      </div>
+    </header>
+    <!-- end header -->
+
+    <div class="container">
+      <div class="parking-wrap">
+        <div class="tablo">
+          <div class="dots"></div>
+          <div class="text">
+            New cars:
+            <span class="text-wait">0</span>, Cars check:
+            <span class="text-check">0</span>, Parking:
+            <span class="text-park">0</span>
+          </div>
+        </div>
+      </div>
+      <div class="cars-list" id="list-wrap"></div>
     </div>
-    <p>Programs: <a href="./programs/cofeMachine/coffeM_index.html">COFFE</a></p>
-    <div class="logo"></div>
-    <div class="upd_button" onclick="document.location.reload()">
-      <span>&#10552;</span>
-      <span>&#10552;</span>
-    </div>
-  </header>
-  <!-- end header -->
 
-  <script>
+    <script>
+      const cars = [
+        // {
+        //   name: "Евгений",
+        //   proffesion: "Рыбак",
+        //   id: "1",
+        //   cash: 43,
+        //   battery: 87,
+        //   state: 0,
+        //   photo: "jenja.png",
+        // },
+        // {
+        //   name: "Вин Дизель",
+        //   proffesion: "Гонщик",
+        //   id: "2",
+        //   cash: 125,
+        //   battery: 54,
+        //   state: 0,
+        //   photo: "vin.jpeg",
+        // },
+        // {
+        //   name: "Драйвер на ночь",
+        //   proffesion: "Водитель лимузина",
+        //   id: "3",
+        //   cash: 65,
+        //   battery: 12,
+        //   state: 0,
+        //   photo: "driver.png",
+        // },
+        // {
+        //   name: "Вася",
+        //   proffesion: "Грузчик",
+        //   id: "4",
+        //   cash: 17,
+        //   battery: 34,
+        //   state: 0,
+        //   photo: "Vasja.png",
+        // },
+        {
+          name: "Сэмми",
+          proffesion: "Таксиcт",
+          id: "5",
+          cash: 87,
+          battery: 45,
+          state: 0,
+          photo: "taxi.jpeg",
+        },
+        {
+          name: "Кристофер",
+          proffesion: "Из прошлого",
+          id: "6",
+          cash: 77,
+          battery: 56,
+          state: 0,
+          photo: "future.jpeg",
+        },
+      ];
 
-  </script>
+      function CarsPark() {
+        this.carsInit = cars.map((car) => new Car(car));
+        this.carsManage = cars.map((car) => new Car(car));
+        this.states = [
+          "Вне зоны",
+          "Ожидает",
+          "Проверка",
+          "Паркинг",
+          "Выезжает",
+        ];
+        this.max = 2;
+        this.tax = 16;
+        this.budget = 0;
+        this.carsCreated = [];
+        this.carsInParking = [];
+        this.carsWaiting = [];
+        this.carsChecking = [];
+      }
 
-</body>
+      function Car({ id, name, proffesion, cash, state, battery, photo }) {
+        this.id = id;
+        this.name = name;
+        this.proffesion = proffesion;
+        this.cash = cash;
+        this.state = state;
+        this.battery = battery;
+        this.photo = photo;
+      }
 
+      CarsPark.prototype.addToPark = function (...cars) {
+        if (this.max !== this.cars.length) {
+          if (car.cash > this.tax) {
+            this.budget += this.tax;
+            this.cars.push(car);
+            car.cash -= 16;
+          } else {
+            console.log("no cash!");
+          }
+        } else {
+          console.log("parking is full!");
+        }
+      };
+
+      CarsPark.prototype.initialization = function () {
+        console.log('len', this.carsWaiting.length);
+        console.log('len!', !this.carsChecking.length);
+        console.log('>>', this.carsWaiting.length < 2 && !this.carsChecking.length);
+        if (this.carsWaiting.length < 2 && !this.carsChecking.length) {
+          const interval = setInterval(() => {
+            if (this.carsWaiting.length < 2) {
+              this.create();
+            } else {
+              clearInterval(interval);
+            }
+          }, 500);
+
+          this.renderInfoCars();
+        } else {
+          return;
+        }
+      };
+
+      CarsPark.prototype.alert = function (text) {
+        let elem = $(".text");
+        let oldText = elem.innerText;
+
+        elem.innerText = text;
+
+        setTimeout(() => {
+          elem.innerText = oldText;
+        }, 1000);
+      };
+
+      CarsPark.prototype.renderInfoCars = function () {
+        const wrapList = $(".cars-list");
+
+        const concatList = this.carsManage
+          .map((info) => {
+            return `<div class="cars-list-item ${
+              info.state !== 0 ? "active" : ""
+            }" id="tabloCar${info.id}">
+                <div class="cars-list-info-wrap">
+                  <div class="car-item-name">Имя: ${info.name}</div>
+                  <div class="car-item-proffesion">Специальность: ${
+                    info.proffesion
+                  }</div>
+                  <div class="car-item-cash">Кэш: ${info.cash}$</div>
+                  <div class="car-item-battery">Заряд: ${info.battery}%</div>
+                  <div class="car-item-state">Состояние: ${
+                    this.states[info.state]
+                  }</div>
+                </div>
+                <div class="car-item-photo">
+                  <img src="./parking/newParking/${info.photo}" />
+                </div>
+            </div>`;
+          })
+          .join("");
+
+        wrapList.innerHTML = concatList;
+      };
+
+      CarsPark.prototype.carToWait = function (img) {
+        setTimeout(() => img.classList.add("wait"), 100);
+
+        this.updateStatus(img.id, 1);
+      };
+
+      CarsPark.prototype.clickCar = function (elem) {
+        const target = elem.target;
+        const id = elem.target.id;
+        const car = elem.target.classList;
+        const objCar = this.findCarforID(id)
+        if (car.contains("wait")) {
+          this.updateStatus(id, 2);
+          this.alert(this.states[2]);
+          car.replace("wait", "check");
+
+          console.log('before ch', this.carsChecking);
+          console.log('before f', objCar);
+
+          this.carsWaiting = this.carsWaiting.filter(car => car.id !== id);
+          this.carsChecking.push(objCar);
+
+
+          console.log('>> this.carsWaiting', this.carsWaiting);
+          console.log('>> this.carsChecking', this.carsChecking);
+          console.log('>> findCarforID(id)', this.findCarforID(id));
+
+        } else if (car.contains("check")) {
+          this.updateStatus(id, 3);
+          this.alert(this.states[3]);
+          car.replace("check", "driveToParking");
+          setTimeout(() => {
+            car.replace("driveToParking", "parking")
+
+            this.createCharge(id)
+          }, 400)
+
+        } else if (car.contains("parking")) {
+          this.updateStatus(id, 4);
+          this.alert(this.states[4]);
+          car.replace("parking", "go_away");
+
+          // добавляем гостя когда дорога свободна
+
+        } else {
+          this.alert("Need decision another car!");
+        }
+
+        this.initialization();
+      };
+
+      CarsPark.prototype.createCharge = function(id) {
+        let div = document.createElement('div');
+        let after = document.createElement('div');
+        let before = document.createElement('div');
+
+        after.classList.add('percent', 'after');
+        before.classList.add('percent', 'before');
+        div.classList.add('charge', `charge${id}`);
+
+        div.appendChild(after);
+        div.appendChild(before);
+
+        $('.container').appendChild(div);
+
+        setTimeout(() => div.classList.add('reveil'), 100)
+      }
+
+      CarsPark.prototype.carToParking = function (elem) {};
+
+      CarsPark.prototype.carToOut = function (elem) {};
+
+      function random(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+
+      CarsPark.prototype.randomCar = function () {
+        const randomNum = random(1, this.carsInit.length - 1);
+
+        // забираем из массива машинку и удаляем ее
+        const newCar = new Car({
+          state: 0,
+          ...this.carsInit[randomNum],
+        });
+
+        this.carsCreated.push(newCar);
+        this.carsInit.splice(randomNum, 1);
+
+        return newCar;
+      };
+
+      CarsPark.prototype.updateTablo = function () {
+        this.renderInfoCars();
+        const concatSting = `NEW CARS: ${this.carsWaiting.length}, CARS CHECK: ${this.carsChecking.length}, PARKING: ${this.carsInParking.length}`;
+        $(".text").innerText = concatSting;
+      };
+
+      CarsPark.prototype.findCarforID = function (id) {
+        for (item of this.carsManage) {
+          if (item.id === id) return item;
+        }
+      };
+
+      CarsPark.prototype.updateStatus = function (id, status) {
+        const desired = this.findCarforID(id);
+
+        desired.state = status;
+
+        this.updateTablo();
+      };
+
+      CarsPark.prototype.updateBattery = function (id) {
+        this.carsManage();
+      };
+
+      CarsPark.prototype.updateCash = function (id) {
+        this.carsManage();
+      };
+
+      CarsPark.prototype.create = function () {
+        let newCar = this.randomCar();
+
+        this.carsWaiting.push(newCar);
+
+        let img = document.createElement("img");
+
+        img.setAttribute("src", `./parking/newParking/car${newCar.id}.png`);
+        img.classList.add("car", `car${newCar.id}`);
+        img.setAttribute("id", newCar.id);
+        img.onclick = this.clickCar.bind(this);
+
+        if (this.carsWaiting.length > 1) {
+          img.classList.add("second");
+        }
+
+        this.carToWait(img);
+
+        $(".parking-wrap").appendChild(img);
+
+        return newCar;
+      };
+
+      new CarsPark().initialization();
+    </script>
+  </body>
 </html>

@@ -1,8 +1,9 @@
 pre code.hljs {
   padding: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.4;
-  font-size: 13px;
+  /* font-family: Arial, sans-serif; */
+  /* line-height: 1.4;
+  font-size: 13px; */
+  text-align: left;
 }
 
 .hljs {
@@ -398,40 +399,138 @@ pre code.hljs {
   cursor: pointer;
 }
 
-/* theory content items */
+/* theory accordions items */
 .accordion-content-list {
 
 }
-.accordion-content-list-title {
+.accordion-content-list-title {}
+.accordion-content-list-items {}
+.accordion-content-list-item {}
+.accordion-content-title {}
+.accordion-content-method {}
+.accordion-content-item {}
+.accordion-content-img {}
+.accordion-content-code {}
+.accordion-content-text {}
+.accordion-content-text {}
+.accordion-content-link {}
+
+/* methods list */
+
+.method-wrap {}
+
+.methods-container {
+  width: 90vw;
+  margin: auto;
+  margin-top: 40px;
+}
+.methods-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.methods-column {
+  width: calc(100% / 5 - 15px);
+}
+
+.list-methods-wrap {
+  width: 100%;
+  font-size: 12px;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+.method-item.hoverable {
+  cursor: pointer;
+}
+
+.method-item {
+  border: 1px dashed white;
+  border-bottom: none;
+  padding: 16px;
+  text-align: center;
+  position: relative;
+}
+
+.method-item:last-of-type {
+  border: 1px dashed white;
+}
+
+.list-methods-title {
+  font-size: 16px;
+  height: 37px;
+  font-weight: 800;
+  text-align: center;
+  color: #fd9179;
+}
+.method-item.hoverable:before {
+  content: "+";
+  display: block;
+  position: absolute;
+  right: 4px;
+  top: 1px;
 
 }
-.accordion-content-list-items {
-
+.method-title {
+  margin-bottom: 10px;
 }
-.accordion-content-list-item {
-
+.method-method {
+  margin-bottom: 4px;
+  color: beige;
+  font-size: 13px;
 }
-.accordion-content-title {
-
+.method-values {
+  font-size: 10px;
+  color: gray;
 }
-.accordion-content-method {
-
+.method-example {
+  color: cornflowerblue;
+  font-size: 11px;
 }
-.accordion-content-item {
-
+.method-text {
+  margin-top: 10px;
+  font-style: italic;
+  color: #303030;
 }
-.accordion-content-img {
+.method-img {}
 
+.hidden-block {
+  display: none;
 }
-.accordion-content-code {
+.methods-code {
+  padding: 10px;
+}
+.method-code.active {
+  display: block;
+}
+.hidden-method {
+  visibility: hidden;
+  position: fixed;
+  height: fit-content;
+  width: 40vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #fff;
+  opacity: 0;
+  z-index: 1;
+  transition: 0.3s;
+}
 
+.method-item.active .hidden-method {
+  visibility: visible;
+  opacity: 1;
 }
-.accordion-content-text {
 
+.nav-links-top {
+  margin-right: 30px;
+  margin-top: 1px;
+  display: flex;
 }
-.accordion-content-text {
-
-}
-.accordion-content-link {
+.nav-top-item {
+  display: inline;
+  font-size: 12px;
 
 }

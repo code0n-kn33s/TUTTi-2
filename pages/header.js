@@ -1,14 +1,6 @@
 // ---------------> output header
 (function () {
-    const themes = [
-      { key: 'pens_react', name: 'React' },
-      { key: 'pens_dom', name: 'DOM' },
-      { key: 'pens_js', name: 'JS' },
-      { key: 'pens_parts', name: 'Parts' },
-      { key: 'pens_design', name: 'Design' },
-    ]
-
-    window.localStorage.setItem('themes', JSON.stringify(themes))
+    // window.localStorage.setItem('themes', JSON.stringify(themes))
 
     const headerItems = (connectNavs) => {
         const currentPage = localStorage.getItem('current_page');
@@ -31,6 +23,7 @@
                     <a href="./programs/knife/knife.html">Knife</a>
                 </p>
                 <p>
+                    <a data-link="methods" id="nav-methods" class="header-item methods-link ${currentPage === 'methods' ? 'active' : ''}">Methods</a>
                     <a data-link="theory" id="nav-theory" class="header-item theory-link ${currentPage === 'theory' ? 'active' : ''}">Theory</a>
                     <a href="./practice.html">Practice</a>
                 </p>

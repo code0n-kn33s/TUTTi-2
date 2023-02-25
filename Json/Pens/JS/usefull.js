@@ -1,6 +1,6 @@
 const usefull = [
     {
-        title: 'uniqum ID',
+        title: '(UID) uniqum ID',
         subtitle: 'Генерация уникального id',
         text: '',
         code: `
@@ -18,6 +18,24 @@ const uid = function(num){
     }
     return arr;
 } `,
+    },
+    {
+        title: 'random',
+        subtitle: 'random number',
+        text: '',
+        code: `
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}`,
+    },
+    {
+        title: 'перемешать - shuffle',
+        subtitle: 'рандомно разбросать елементы',
+        text: '',
+        code: `
+const shuffle = (arr) => {
+    return arr.sort(() => Math.round(Math.random() * 100) - 50);
+}`,
     },
 
 ]

@@ -46,13 +46,15 @@ body {
   display: block;
   text-align: left;
   width: 100%;
-  padding: 1em 0;
   color: #7288a2;
   font-size: 18px;
   font-weight: 400;
   border: none;
   background: none;
   outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .accordion button:hover,
@@ -202,6 +204,7 @@ body {
 /* !theory-article это блочок теории. все стили наследуются oт pens*/
 .theory-article {
   margin-bottom: 20px;
+  padding: 20px;
 }
 .theory-article .field-method{
   margin-bottom: 16px;

@@ -36,7 +36,16 @@ const foo = async (param) => {
 
 async function foo() {
     await bar()
-} `,
+}
+
+// simple
+const foo = async user => {
+    const user = await fetch('/user')
+    const comment = await fetch('/commnets')
+
+    return comment
+}
+`,
     },
     {
         title: 'Fetch',
@@ -61,5 +70,17 @@ fetch('http://localhost:3003/auth/login', {
 })
 .then(res => res.json())
 .then(res => console.log('response:', res));`,
+    },
+    {
+        title: 'simple fetch',
+        subtitle: '',
+        img: '',
+        text: `
+
+        `,
+        list: [],
+        code: `
+fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json').then(arr => console.log(arr.json())).catch(console.table)
+`,
     },
 ]

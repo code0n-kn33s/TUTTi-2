@@ -101,4 +101,31 @@ const animations = [
   }
         `,
   },
+  {
+    title: 'Хвостик при движении',
+    subtitle: '',
+    text: '',
+    img: 'z-indexs.png',
+    code: `
+  .example:nth-of-type(1) {
+      z-index: 1;
+  }
+
+  .example:nth-of-type(2) {
+      z-index: 1;
+  }
+
+  .example:nth-of-type(3) {
+      z-index: -1;
+  }
+
+  .example:nth-of-type(4) {
+      z-index: 1;
+  }
+
+  .example:nth-of-type(5) {
+      z-index: -1;
+  }
+        `,
+  },
 ]

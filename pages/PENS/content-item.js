@@ -4,7 +4,7 @@ const contentItems = (posts) => {
 
         return (`
         <div class="post-item left-bordered ${uniqueId}-parent">
-            <div class="field ">
+            <div class="field">
                 <div class="field-top">
                     ${(post.title) ? `<div class="field-title yellow-title">${index}. ${post.title}</div>` : ''}
                     <div class="field-method">${post.subtitle}</div>
@@ -22,11 +22,14 @@ const contentItems = (posts) => {
                     ` : ''}
             </div>
 
+            ${(post.code.length) ? `
             <div class="btn-group-actions">
                 <div class="show-all ${uniqueId}-reveil" onClick="showEntire('${uniqueId}')" >
                     <span>&#8595;</span>
                 </div>
             </div>
+            ` : ''}
+
         </div>
     `)}).join('')
 }

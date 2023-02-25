@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="favicon" href="./assets/icon/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="./assets/libs/highlight/styles/an-old-hope.min.css"
+    />
 
-    <link rel="shortcut icon" type="favicon" href="./assets/icon/favicon.ico">
-    <link rel="stylesheet" href="./assets/libs/highlight/styles/an-old-hope.min.css">
+    <link rel="stylesheet" href="./assets/styles/variables.css" />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
 
-    <link rel="stylesheet" href="./assets/styles/variables.css">
-    <link rel="stylesheet" href="./assets/styles/reset.css">
-
-    <link rel="stylesheet" href="./assets/styles/animations.css">
-    <link rel="stylesheet" href="./assets/styles/effects.css">
-    <link rel="stylesheet" href="./assets/styles/main.css">
-    <link rel="stylesheet" href="./assets/styles/header.css">
-    <link rel="stylesheet" href="./assets/styles/theory.css">
+    <link rel="stylesheet" href="./assets/styles/animations.css" />
+    <link rel="stylesheet" href="./assets/styles/effects.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/header.css" />
+    <link rel="stylesheet" href="./assets/styles/theory.css" />
 
     <title>js tutorial</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="header"></div>
     <div id="app"></div>
 
@@ -33,91 +38,142 @@
     <script src="helpers/pens-helpers.js"></script>
     <script src="helpers/theory-helpers.js"></script>
 
-    <!-- // PENS RENDER -->
-    <script src="pages/PENS/pens.js"></script>
-    <script src="pages/PENS/content.js"></script>
-    <script src="pages/PENS/content-item.js"></script>
-    <script src="pages/PENS/aside-item.js"></script>
+    <!-- // Pens RENDER -->
+    <script src="pages/Pens/pens.js"></script>
+    <script src="pages/Pens/content.js"></script>
+    <script src="pages/Pens/content-item.js"></script>
+    <script src="pages/Pens/aside-item.js"></script>
 
-    <!-- // THEORY RENDER -->
-    <script src="pages/THEORY/theory.js"></script>
-    <script src="pages/THEORY/aside-theory.js"></script>
-    <script src="pages/THEORY/accordion-item-content.js"></script>
-    <script src="pages/THEORY/accordion-items.js"></script>
-    <script src="pages/THEORY/content-item.js"></script>
+    <!-- // RENDER : Theory -->
+    <script src="pages/Theory/theory.js"></script>
+    <script src="pages/Theory/aside-theory.js"></script>
+    <script src="pages/Theory/accordion-item-content.js"></script>
+    <script src="pages/Theory/accordion-items.js"></script>
+    <script src="pages/Theory/content-item.js"></script>
 
-    <!-- // DOM PENS-->
-    <script src="Json/PENS/Dom/animations.js"></script>
-    <script src="Json/PENS/Dom/dom_tricks.js"></script>
-    <script src="Json/PENS/Dom/layout.js"></script>
-    <script src="Json/PENS/Dom/styleSheets.js"></script>
-    <script src="Json/PENS/Dom/elems.js"></script>
-    <script src="Json/PENS/Dom/index.js"></script>
+    <!-- // Methods view-->
+    <script src="pages/Methods/methods.js"></script>
+    <script src="pages/Methods/list-methods.js"></script>
+    <script src="pages/Methods/list-methods-items.js"></script>
 
-    <!-- // REACT PENS -->
-    <script src="Json/PENS/React/react_tricks.js"></script>
-    <script src="Json/PENS/React/common.js"></script>
-    <script src="Json/PENS/React/hooks.js"></script>
-    <script src="Json/PENS/React/react_libs.js"></script>
-    <script src="Json/PENS/React/index.js"></script>
+    <!-- ========================= PENS ================================= -->
 
-    <!-- // PARTS PENS -->
-    <script src="Json/PENS/Parts/common_parts.js"></script>
-    <script src="Json/PENS/Parts/tricky_parts.js"></script>
-    <script src="Json/PENS/Parts/index.js"></script>
+    <!-- // TS -->
+    <script src="Json/Pens/TS/main_ts.js"></script>
+    <script src="Json/Pens/TS/index.js"></script>
 
-    <!-- // DESIGN PENS -->
-    <script src="Json/PENS/Design/svg.js"></script>
-    <script src="Json/PENS/Design/index.js"></script>
+    <!-- // DOM -->
+    <script src="Json/Pens/Dom/animations.js"></script>
+    <script src="Json/Pens/Dom/dom_tricks.js"></script>
+    <script src="Json/Pens/Dom/layout.js"></script>
+    <script src="Json/Pens/Dom/styleSheets.js"></script>
+    <script src="Json/Pens/Dom/elems.js"></script>
+    <script src="Json/Pens/Dom/index.js"></script>
 
-    <!-- // JS PENS -->
-    <script src="Json/PENS/JS/js_tricks.js"></script>
-    <script src="Json/PENS/JS/interview.js"></script>
-    <script src="Json/PENS/JS/usefull.js"></script>
-    <script src="Json/PENS/JS/dom_js.js"></script>
-    <script src="Json/PENS/JS/prototypes.js"></script>
-    <script src="Json/PENS/JS/async.js"></script>
-    <script src="Json/PENS/JS/sm_programs.js"></script>
-    <script src="Json/PENS/JS/syntax.js"></script>
-    <script src="Json/PENS/JS/index.js"></script>
+    <!-- // REACT -->
+    <script src="Json/Pens/React/react_tricks.js"></script>
+    <script src="Json/Pens/React/common.js"></script>
+    <script src="Json/Pens/React/hooks.js"></script>
+    <script src="Json/Pens/React/react_libs.js"></script>
+    <script src="Json/Pens/React/index.js"></script>
 
+    <!-- // PARTS -->
+    <script src="Json/Pens/Parts/common_parts.js"></script>
+    <script src="Json/Pens/Parts/tricky_parts.js"></script>
+    <script src="Json/Pens/Parts/index.js"></script>
 
+    <!-- // DESIGN -->
+    <script src="Json/Pens/Design/svg.js"></script>
+    <script src="Json/Pens/Design/index.js"></script>
 
+    <!-- // JS -->
+    <script src="Json/Pens/JS/js_tricks.js"></script>
+    <script src="Json/Pens/JS/interview.js"></script>
+    <script src="Json/Pens/JS/usefull.js"></script>
+    <script src="Json/Pens/JS/dom_js.js"></script>
+    <script src="Json/Pens/JS/prototypes.js"></script>
+    <script src="Json/Pens/JS/async.js"></script>
+    <script src="Json/Pens/JS/sm_programs.js"></script>
+    <script src="Json/Pens/JS/syntax.js"></script>
+    <script src="Json/Pens/JS/must_have.js"></script>
+    <script src="Json/Pens/JS/api_js.js"></script>
+    <script src="Json/Pens/JS/index.js"></script>
 
-    <!-- // THEORY OBJECTS -->
-    <script src="Json/THEORY/Objects/main.js"></script>
-    <script src="Json/THEORY/Objects/methods.js"></script>
-    <script src="Json/THEORY/Objects/index.js"></script>
+    <script src="Json/Pens/index.js"></script>
 
-    <!-- // THEORY SERVER -->
-    <script src="Json/THEORY/Server/web_socket.js"></script>
-    <script src="Json/THEORY/Server/rest.js"></script>
-    <script src="Json/THEORY/Server/index.js"></script>
+    <!-- ==================== THEORY ============================ -->
 
-    <!-- // THEORY Generators -->
-    <script src="Json/THEORY/Generators/main.js"></script>
-    <script src="Json/THEORY/Generators/methods.js"></script>
-    <script src="Json/THEORY/Generators/index.js"></script>
+    <!-- // SERVER -->
+    <script src="Json/Theory/Server/web_socket.js"></script>
+    <script src="Json/Theory/Server/rest.js"></script>
+    <script src="Json/Theory/Server/index.js"></script>
 
-    <!-- // THEORY Generators -->
-    <script src="Json/THEORY/Different/main.js"></script>
-    <script src="Json/THEORY/Different/index.js"></script>
+    <!-- // Generators -->
+    <script src="Json/Theory/Generators/main.js"></script>
+    <script src="Json/Theory/Generators/index.js"></script>
 
-    <!-- // THEORY evetLoop -->
-    <script src="Json/THEORY/BrowserApi/callStack.js"></script>
-    <script src="Json/THEORY/BrowserApi/main.js"></script>
-    <script src="Json/THEORY/BrowserApi/index.js"></script>
+    <!-- // Different -->
+    <script src="Json/Theory/Different/paterns.js"></script>
+    <script src="Json/Theory/Different/terminal.js"></script>
+    <script src="Json/Theory/Different/oop.js"></script>
+    <script src="Json/Theory/Different/main.js"></script>
+    <script src="Json/Theory/Different/docker.js"></script>
+    <script src="Json/Theory/Different/index.js"></script>
 
-    <!-- // THEORY evetLoop -->
-    <script src="Json/THEORY/React/createReactApp.js"></script>
-    <script src="Json/THEORY/React/main.js"></script>
-    <script src="Json/THEORY/React/index.js"></script>
+    <!-- // JS -->
+    <script src="Json/Theory/Js/async.js"></script>
+    <script src="Json/Theory/Js/eventloop.js"></script>
+    <script src="Json/Theory/Js/architecture.js"></script>
+    <script src="Json/Theory/Js/callback.js"></script>
+    <script src="Json/Theory/Js/closure.js"></script>
+    <script src="Json/Theory/Js/objects.js"></script>
+    <script src="Json/Theory/Js/main.js"></script>
+    <script src="Json/Theory/Js/index.js"></script>
 
-    <!-- // THEORY BLOCKS -->
-    <script src="Json/THEORY/index.js"></script>
+    <!-- // Algoritms -->
+    <script src="Json/Theory/Algoritms/main.js"></script>
+    <script src="Json/Theory/Algoritms/index.js"></script>
+
+    <!-- // EVENT LOOP -->
+    <script src="Json/Theory/BrowserApi/callStack.js"></script>
+    <script src="Json/Theory/BrowserApi/main.js"></script>
+    <script src="Json/Theory/BrowserApi/index.js"></script>
+
+    <!-- // REACT -->
+    <script src="Json/Theory/React/redux.js"></script>
+    <script src="Json/Theory/React/lifecircle.js"></script>
+    <script src="Json/Theory/React/hooks.js"></script>
+    <script src="Json/Theory/React/main.js"></script>
+    <script src="Json/Theory/React/index.js"></script>
+
+    <!-- // Interview -->
+    <script src="Json/Theory/Review/main.js"></script>
+    <script src="Json/Theory/Review/index.js"></script>
+
+    <!-- // TypeScript -->
+    <script src="Json/Theory/TypeScript/properties.js"></script>
+    <script src="Json/Theory/TypeScript/mapped_types.js"></script>
+    <script src="Json/Theory/TypeScript/types_interfaces.js"></script>
+    <script src="Json/Theory/TypeScript/main.js"></script>
+    <script src="Json/Theory/TypeScript/index.js"></script>
+
+    <!-- // BLOCKS -->
+    <script src="Json/Theory/index.js"></script>
+
+    <!-- ========================= METHODS ================================= -->
+
+    <script src="Json/Methods/object.js"></script>
+    <script src="Json/Methods/classList.js"></script>
+    <script src="Json/Methods/array.js"></script>
+    <script src="Json/Methods/react.js"></script>
+    <script src="Json/Methods/operators.js"></script>
+    <script src="Json/Methods/function.js"></script>
+    <script src="Json/Methods/utilites_ts.js"></script>
+    <script src="Json/Methods/string.js"></script>
+    <script src="Json/Methods/Set.js"></script>
+    <script src="Json/Methods/index.js"></script>
 
     <!-- // libs -->
     <script src="assets/libs/highlight/highlight.min.js"></script>
-</body>
-
+  </body>
 </html>

@@ -1,6 +1,6 @@
 
-const accordionItemContent = section => {
-  const array2d = accordionItemContentCompare(section)
+const accordionItemContent = (section, id) => {
+  const array2d = accordionItemContentCompare(section, id)
 
   let navs = []
   let blocks = []
@@ -10,21 +10,22 @@ const accordionItemContent = section => {
     blocks.push(item[1])
   })
 
+  // cutted from render
+  // <ul class="nav-links">${navs.join('')}</ul>
+
   let render = `
     <div>
-      <ul class="nav-links">${navs.join('')}</ul>
-
       <div class="articles"> ${blocks.join('')} </div>
     </div>
-  `
+    `
 
   return render
 }
 
 
-const accordionItemContentCompare = sectionItems => {
+const accordionItemContentCompare = (sectionItems, id) => {
   return sectionItems.blocks.map((article) => {
-    const id = uid()
+    // const id = uid()
     return ([
       `<li><a href="#${id}">${article.title}</a></li> `,
 
@@ -37,7 +38,7 @@ const accordionItemContentCompare = sectionItems => {
             <div class="accordion-content-item">
               <img onclick="open_photo('./assets/img/study/${article.img}')" class="accordion-content-img photo" src="./assets/img/study/${article.img}" />
             </div>
-            ` : '' }
+            ` : ''}
           ${(article.code) ? `
             <div class="accordion-content-item">
               <pre class="accordion-content-code code ${id}-code"> <code>
@@ -55,8 +56,7 @@ const accordionItemContentCompare = sectionItems => {
           ${(article.list) ? `
             <div class="accordion-content-item">
               <div class="accordion-content-list">
-                <div class="accordion-content-list-title">${article.list.listTitle}</div>
-                <ul class="accordion-content-list-items">${article.list.listItems.map(listText => `<li class="accordion-content-list-item">${listText}</li>`).join('')}</ul>
+                <ul class="accordion-content-list-items">${article.list.map(listItem => `<li class="accordion-content-list-item">${listItem}</li>`).join('')}</ul>
               </div>
             </div>
           ` : ''}

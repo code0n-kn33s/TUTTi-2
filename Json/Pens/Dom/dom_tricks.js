@@ -115,15 +115,15 @@ ul li::before {
     img: 'quare.png',
     text: '',
     code: `
-    <div class="square"></div>
+<div class="square"></div>
 
-    .square {
-      height:50px;
-        width:50px;
-        border-bottom:10px solid black;
-        border-left:10px solid black;
-        transform:rotate(135deg);
-    }
+.square {
+  height:50px;
+    width:50px;
+    border-bottom:10px solid black;
+    border-left:10px solid black;
+    transform:rotate(135deg);
+}
     `,
   },
   {
@@ -206,6 +206,18 @@ border-image-outset: 7px;
          transform: translateZ(-100 * $x#{px}) scale($x + 1);
       }
     }
+    `,
+  },
+  {
+    title: 'Svg перечеркивание',
+    subtitle: '',
+    img: 'chests.png',
+    text: '',
+    code: `
+<svg viewBox="0 0 100 100" stroke="rgba(255,0,0,0.9)" stroke-width="1.5">
+  <line x2="100%" y2="100%"/>
+  <line y1="100%" x2="100%"/>
+</svg>
     `,
   },
 ]

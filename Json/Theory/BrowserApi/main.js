@@ -4,10 +4,7 @@ const BrowserApi_main = [
         subtitle: 'Событийный цикл',
         img: 'loop.png',
         code: '',
-        list: {
-            listTitle: "Состоит из: ",
-            listItems: ['CallStack', 'BrowserApi', 'Callback Queue' ],
-        },
+        list: ['CallStack', 'BrowserApi', 'Callback Queue'],
         text: `
 
         `,

@@ -5,7 +5,8 @@ const different_main = [{
   link: 'https://learn.javascript.ru/ninja-code',
   text: 'Funny story about mistakes in code',
   code: ``,
-}, {
+},
+{
   title: 'Бинарные данные',
   subtitle: 'загрузка, скачивание картинок, аудио и тд',
   img: '',
@@ -15,4 +16,6 @@ const different_main = [{
     Обилие классов для работы с бинарными данными может немного запутать. Вот некоторые из них:
 
     ArrayBuffer, Uint8Array, DataView, Blob, File и т.д.`
-}, ]
+},
+
+]

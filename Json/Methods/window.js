@@ -10,6 +10,7 @@ window.location.href     // http://www.somedomain.com/account/search?filter=a#to
 window.location.port     // (empty string)
 window.location.protocol // http:
 window.location.search   // ?filter=a
+eval
 
 
 const items = {
@@ -22,14 +23,14 @@ const items = {
             title: '',
             subtitle: '',
             text: '',
-            code: '',
+            code: ``,
         },
         {
             type: 'text' || 'code',
             title: '',
             subtitle: '',
             text: '',
-            code: '',
+            code: ``,
         },
     ]
 }
